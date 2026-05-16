@@ -27,3 +27,17 @@ input:not([disabled]):focus {
   --gray-cool-60: #565c65;
   --gray-90: #171717;
 }
+
+/* KENBURNS */
+@keyframes kenburns {
+  0% {
+    transform: translateX(0%) scale(1);
+  }
+  100% {
+    transform: translateX(0%) scale(1.08);
+  }
+}
+
+.slide-active {
+  animation: kenburns 5s ease-in-out forwards;
+}

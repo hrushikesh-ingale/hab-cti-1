@@ -4,6 +4,13 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Funding Resources", href: "/fundingResources" },
+    { label: "HABs 101", href: "#" },
+    { label: "FAQs", href: "#" },
+  ];
   return (
     <div className="flex flex-row items-center justify-between px-20 py-3 tracking-wide shadow-sm border-b border-gray-200 rounded-b-lg">
       {/* Logo and Title */}
@@ -21,21 +28,24 @@ export default function Navbar() {
 
       {/* Nav Links */}
       <nav className="flex flex-row gap-10 text-gray-600">
-        <Link className="hover:text-blue-400 text-sm" href="/">
-          Home
-        </Link>
-        <Link className="hover:text-blue-400 text-sm" href="/about">
-          About
-        </Link>
-        <Link className="hover:text-blue-400 text-sm" href="/fundingResources">
-          Funding Resources
-        </Link>
-        <Link className="hover:text-blue-400 text-sm" href="#">
-          HABs 101
-        </Link>
-        <Link className="hover:text-blue-400 text-sm" href="#">
-          FAQs
-        </Link>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`relative text-sm group transition-colors duration-200 hover:text-primary ${
+              pathname === link.href ? "text-primary" : ""
+            }`}
+          >
+            {/* ADDED - top hover line */}
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+            <span
+              className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 origin-center ${
+                pathname === link.href ? "scale-x-100" : "scale-x-0"
+              }`}
+            />
+            {link.label}
+          </Link>
+        ))}
       </nav>
 
       {/* Search bar */}

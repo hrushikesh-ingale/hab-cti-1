@@ -7,9 +7,11 @@ export default function ControlStrategies() {
   return (
     <div className="px-20 py-10 tracking-wide">
       {/* Strategies Headings */}
-      <p className="text-green-600 font-bold">CONTROL STRATEGIES</p>
-      <p className="font-bold text-2xl">Types of HAB Control Technologies</p>
-      <p className="text-xs">
+      <p className="text-green font-bold text-sm">CONTROL STRATEGIES</p>
+      <p className="font-bold text-3xl text-(--black)] mt-1">
+        Types of HAB Control Technologies
+      </p>
+      <p className="text-sm text-(--gray)] mt-2 max-w-xl whitespace-nowrap">
         Determining what type of product you have is key as each type has a
         different process for registration
       </p>

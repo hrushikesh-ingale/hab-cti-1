@@ -2,8 +2,10 @@ export default function Disclaimer() {
   return (
     <div className="px-20 py-10 tracking-wide">
       {/* Warning */}
-      <p className="text-green-600 font-bold">DISCLAIMER</p>
-      <p className="font-bold text-2xl">Warning & Report</p>
+      <p className="text-green font-bold text-sm">DISCLAIMER</p>
+      <p className="font-bold text-3xl text-(--black)] mt-1">
+        Warning & Report
+      </p>
 
       {/* Attention! */}
       <div className="flex flex-row mt-7">

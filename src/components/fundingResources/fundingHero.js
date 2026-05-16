@@ -29,7 +29,14 @@ export default function FundingHero() {
         </div>
       </div>
 
-      <div className="border-primary-lighter border-b-6 mt-20">
+      <div className="border-primary-lighter border-b-6 mt-20 flex flex-row">
+        <div>
+          <p className="font-bold">On this page</p>
+          <p>US HABCTI Grnat Information</p>
+          <p>2025 Notice of Funding and Review Process</p>
+          <p>Resources</p>
+          <p>Other Funding Opportunities</p>
+        </div>
         <h1 className="text-primary-darker">US HAB-CTI Grant Information</h1>
         <p className="mb-6 font-light">
           One of the objectives of the US HAB-CTI is to fund extramural proof of

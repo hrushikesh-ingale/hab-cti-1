@@ -13,90 +13,133 @@ export default function ResourceNavigation() {
 
       {/* Laws and Permit Section */}
       <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-10 px-10 mt-8 font-medium">
-        <legend className="text-primary px-2 text-xl font-medium">
+        <legend className="text-primary px-2 text-l font-medium">
           Laws and Permits
         </legend>
 
         <div className="flex flex-row gap-6 mt-4">
-          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white transition">
+          <div className="relative border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
             <p className="font-semibold text-black">
               <svg
-                className="usa-icon"
+                className="usa-icon mr-8 text-xl"
                 aria-hidden="true"
                 focusable="false"
                 role="img"
               >
                 <use href="/assets/img/sprite.svg#star"></use>
               </svg>
+              <svg
+                className="usa-icon absolute left-80 text-xl"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use href="/assets/img/sprite.svg#launch"></use>
+              </svg>
               Research Requirements
             </p>
-            <p className="text-sm text-gray-700 mt-1">
+
+            <p className="text-sm text-gray-700 mt-1 ml-18">
               Data Requirements for EPA Registration
             </p>
           </div>
 
-          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white transition">
+          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
             <p className="font-semibold text-black">
               <svg
-                className="usa-icon"
+                className="usa-icon mr-8 text-xl"
                 aria-hidden="true"
                 focusable="false"
                 role="img"
               >
                 <use href="/assets/img/sprite.svg#construction_worker"></use>
               </svg>
+              <svg
+                className="usa-icon absolute left-80 text-xl"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use href="/assets/img/sprite.svg#launch"></use>
+              </svg>
               Field Studies
             </p>
-            <p className="text-sm text-gray-700 mt-1">
+            <p className="text-sm text-gray-700 mt-1 ml-18">
               Experimental Use Permits
             </p>
           </div>
 
-          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white transition">
+          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
             <p className="font-semibold text-black">
               <svg
-                className="usa-icon"
+                className="usa-icon mr-8 text-xl"
                 aria-hidden="true"
                 focusable="false"
                 role="img"
               >
                 <use href="/assets/img/sprite.svg#link"></use>
               </svg>
+              <svg
+                className="usa-icon absolute left-80 text-xl"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use href="/assets/img/sprite.svg#launch"></use>
+              </svg>
               External Resources
             </p>
-            <p className="text-sm text-gray-700 mt-1">Learn More!</p>
+            <p className="text-sm text-gray-700 mt-1 ml-18">Learn More!</p>
           </div>
         </div>
 
         <div className="flex flex-row gap-6 mt-6">
-          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white transition">
+          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
             <p className="font-semibold text-black">
               <svg
-                className="usa-icon"
+                className="usa-icon mr-8 text-xl"
                 aria-hidden="true"
                 focusable="false"
                 role="img"
               >
                 <use href="/assets/img/sprite.svg#thumb_up_alt"></use>
               </svg>
+              <svg
+                className="usa-icon absolute left-145 text-xl"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use href="/assets/img/sprite.svg#launch"></use>
+              </svg>
               Getting an Approval
             </p>
-            <p className="text-sm text-gray-700 mt-1">Permits & Regulations</p>
+            <p className="text-sm text-gray-700 mt-1 ml-18">
+              Permits & Regulations
+            </p>
           </div>
 
-          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white transition">
+          <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
             <p className="font-semibold text-black">
               <svg
-                className="usa-icon"
+                className="usa-icon mr-8 text-xl"
                 aria-hidden="true"
                 focusable="false"
                 role="img"
               >
                 <use href="/assets/img/sprite.svg#topic"></use>
               </svg>
+              <svg
+                className="usa-icon absolute left-145 text-xl"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use href="/assets/img/sprite.svg#launch"></use>
+              </svg>
               Regulatory Agencies
             </p>
-            <p className="text-sm text-gray-700 mt-1">
+            <p className="text-sm text-gray-700 mt-1 ml-18">
               Federal & State Regulations
             </p>
           </div>
@@ -106,116 +149,166 @@ export default function ResourceNavigation() {
       {/* Literature */}
       <div className="flex flex-row gap-8 mt-10">
         <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-8 px-8 w-2/3">
-          <legend className="text-primary px-2 text-xl font-medium">
+          <legend className="text-primary px-2 text-l font-medium">
             Literature
           </legend>
 
           <div className="flex flex-row gap-6 mt-4">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#public"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 HABs 101
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-gray-600 mt-1 ml-18">
                 Species, Impacts, Research, Resources, Response
               </p>
             </div>
 
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#local_library"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 Literature Search
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-gray-600 mt-1 ml-18">
                 Publications on HAB control technologies
               </p>
             </div>
           </div>
 
           <div className="flex flex-row gap-6 mt-6">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#contact_page"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 Consultants Database
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-gray-600 mt-1 ml-18">
                 Get Consultants or Experts
               </p>
             </div>
 
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#history"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 Control Technologies
               </p>
-              <p className="text-sm text-gray-600 mt-1">Common Concepts</p>
+              <p className="text-sm text-gray-600 mt-1 ml-18">
+                Common Concepts
+              </p>
             </div>
           </div>
         </fieldset>
 
         {/* Products */}
         <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-8 px-8 w-1/3">
-          <legend className="text-primary px-2 text-xl font-medium">
+          <legend className="text-primary px-2 text-l font-medium">
             Products
           </legend>
 
           <div className="flex flex-col gap-6 mt-4">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#verified"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 Registered Products
               </p>
-              <p className="text-sm text-gray mt-1">Product Catalogue</p>
+              <p className="text-sm text-gray mt-1 ml-18">Product Catalogue</p>
             </div>
 
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white">
+            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg
-                  className="usa-icon"
+                  className="usa-icon mr-8 text-xl"
                   aria-hidden="true"
                   focusable="false"
                   role="img"
                 >
                   <use href="/assets/img/sprite.svg#search"></use>
                 </svg>
+                <svg
+                  className="usa-icon absolute left-80 text-xl"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use href="/assets/img/sprite.svg#launch"></use>
+                </svg>
                 Patent Search
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-gray-600 mt-1 ml-18">
                 IP, Inventorship Agreements & Registration Information
               </p>
             </div>

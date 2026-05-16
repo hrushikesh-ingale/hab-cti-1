@@ -33,6 +33,13 @@ export default function AboutTeam() {
           <p>VP, Sponsored Research,</p>
           <p>Mote Marine Lab</p>
         </div>
+
+        <div>
+          <img src="/amy.png" className="w-80 h-80 object-contain" />
+          <p className="font-bold text-xl">Amy Grogan</p>
+          <p>Director, HAB-CTI,</p>
+          <p>Faculty Research Assistant</p>
+        </div>
       </div>
 
       {/* Contact Information */}
