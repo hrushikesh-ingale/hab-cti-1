@@ -21,6 +21,14 @@ export default function FundingHero() {
         <img src="/" className="w-full object-cover h-105" />
         <div className="absolute inset-0 bg-black opacity-80 z-0" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10">
+          <svg
+            className="usa-icon text-3xl border border-t-2 border-b-2 border-r-2 border-l-2 rounded"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+          >
+            <use href="/assets/img/sprite.svg#attach_money"></use>
+          </svg>
           <h1 className="!text-6xl font-bold">Funding Opportunities</h1>
           <p className="text-xl">
             A repository of available grants and funding options
@@ -32,29 +40,37 @@ export default function FundingHero() {
       <div className="border-primary-lighter border-b-6 mt-20 flex flex-row">
         <div>
           <p className="font-bold">On this page</p>
-          <p>US HABCTI Grnat Information</p>
+          <p>US HABCTI Grant Information</p>
           <p>2025 Notice of Funding and Review Process</p>
           <p>Resources</p>
           <p>Other Funding Opportunities</p>
         </div>
-        <h1 className="text-primary-darker">US HAB-CTI Grant Information</h1>
-        <p className="mb-6 font-light">
-          One of the objectives of the US HAB-CTI is to fund extramural proof of
-          concept, innovative HAB control tools and technology projects to
-          assess their real-world feasibility. It is anticipated that US HAB-CTI
-          research will primarily be conducted in the scale of "Tier 1" (small
-          scale lab testing) or "Tier 2" (tanks, mesocosms, and raceways).
-          Promising US HAB-CTI tools and technologies will be encouraged to
-          apply to relevant future NOAA Prevention Control and Mitigation HAB
-          competitive funding announcements or other opportunities independent
-          from the US HAB-CTI (shown as "Tier 3" and "Tier 4" in image).
-        </p>
+        <div>
+          <h1 className="text-primary-darker">US HAB-CTI Grant Information</h1>
+          <p className="mb-6 font-light">
+            One of the objectives of the US HAB-CTI is to fund extramural proof
+            of concept, innovative HAB control tools and technology projects to
+            assess their real-world feasibility. It is anticipated that US
+            HAB-CTI research will primarily be conducted in the scale of "Tier
+            1" (small scale lab testing) or "Tier 2" (tanks, mesocosms, and
+            raceways). Promising US HAB-CTI tools and technologies will be
+            encouraged to apply to relevant future NOAA Prevention Control and
+            Mitigation HAB competitive funding announcements or other
+            opportunities independent from the US HAB-CTI (shown as "Tier 3" and
+            "Tier 4" in image).
+          </p>
+        </div>
+      </div>
+
+      {/* images */}
+      <div className="flex flex-row gap-50 justify-center mt-20">
+        <img src="/NOAA.svg" className="w-50 h-50 object-contain" />
+        <img src="/UMCES.png" className="w-50 h-50  object-contain" />
+        <img src="/MOTE.png" className="w-50 h-50  object-contain" />
       </div>
 
       {/* Tiers */}
-
       <div className="px-5 py-10">
-        <p>images here</p>
         <h1 className="font-bold">US Harmful Algal Bloom - Control</h1>
         <h1 className="font-bold">Technologies Incubator Clearinghouse</h1>
 
