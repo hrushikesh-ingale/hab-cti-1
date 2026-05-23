@@ -19,11 +19,14 @@ export default function Navbar() {
         <img
           src="/logo.png"
           alt="US HAB-CTI Logo"
-          className="w-10 h-10 rounded-full"
+          className="w-13 h-13 rounded-full"
         />
         <div className="text-primary">
-          <p>US HAB-CTI</p>
-          <p className="italic text-xs">Clearinghouse</p>
+          <p>US HAB CTI</p>
+          <div className="mt-0.5">
+            <p className="italic text-xs">HAB Control Technologies</p>
+            <p className="italic text-xs">& Regulatory Logistics</p>
+          </div>
         </div>
       </div>
 

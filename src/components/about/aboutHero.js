@@ -41,7 +41,9 @@ export default function AboutHero() {
           <p className="text-lg !mt-3 text-gray-200">
             US Harmful Algal Bloom - Control
           </p>
-          <p className="text-lg !mt-0 text-gray-200">Technologies Incubator</p>
+          <p className="text-lg !mt-0 text-gray-200">
+            Technologies & Regulatory Logistics
+          </p>
         </div>
       </div>
     </div>

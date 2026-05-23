@@ -37,8 +37,8 @@ export default function Hero() {
         <div className="relative z-10 py-10 px-1 text-center mb-6">
           <p className="text-[#78a529] text-l font-bold mt-8">WELCOME TO</p>
           <div className="font-bold text-xl leading-tight">
-            <h1 className="!mb-0">US Harmful Algal Bloom - Control</h1>
-            <h1 className="!mt-2">Technologies Incubator Clearinghouse</h1>
+            <h1 className="!mb-0">Harmful Algal Bloom Control</h1>
+            <h1 className="!mt-2">Technologies & Regulatory Logistics</h1>
           </div>
           <div className="text-l text-gray-200 max-w-xl mx-auto whitespace-nowrap">
             <p>

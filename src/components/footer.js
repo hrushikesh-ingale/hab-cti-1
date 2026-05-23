@@ -22,8 +22,8 @@ export default function Footer() {
 
               {/* Title */}
               <div className="text-2xl font-semibold">
-                <p>United States Harmful Algal</p>
-                <div>Bloom Control Technologies Incubator</div>
+                <p>Harmful Algal Bloom Control</p>
+                <div>Technologies & Regulatory Logistics</div>
               </div>
             </div>
 
