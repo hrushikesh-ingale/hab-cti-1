@@ -8,7 +8,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Funding Resources", href: "/fundingResources" },
-    { label: "HABs 101", href: "#" },
+    { label: "HABs 101", href: "/habs101" },
     { label: "FAQs", href: "#" },
     { label: "Glossary", href: "#" },
   ];
