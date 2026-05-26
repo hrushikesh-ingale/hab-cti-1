@@ -1,11 +1,15 @@
+"use client";
 export default function Footer() {
   return (
     <div className="mt-5 tracking-wide">
       {/* Return to top */}
       <div className="flex justify-center py-2">
-        <a href="#" className="text-primary underline text-sm text-center mb-4">
+        <p
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="hover:text-primary-darker text-primary underline text-sm text-center mb-4 transition-colors duration-300 cursor-pointer"
+        >
           Return to top
-        </a>
+        </p>
       </div>
       <div className="bg-primary-darker text-white">
         <div className="px-20 py-20">
@@ -61,7 +65,7 @@ export default function Footer() {
               <ul className="list-none p-0 m-0 flex flex-col gap-3">
                 <a
                   className="hover:underline cursor-pointer hover:text-primary-lighter"
-                  href="#"
+                  href="/"
                 >
                   Home
                 </a>

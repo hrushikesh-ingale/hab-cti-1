@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link
             key={link.label}
             href={link.href}
-            className={`relative text-sm group transition-colors duration-200 hover:text-primary ${
+            className={`relative text-sm group transition-colors duration-200 hover:text-primary pb-3 ${
               pathname === link.href ? "text-primary" : ""
             }`}
           >
