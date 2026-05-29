@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="flex justify-center py-2">
         <p
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="hover:text-primary-darker text-primary underline text-sm text-center mb-4 transition-colors duration-300 cursor-pointer"
+          className="hover:text-primary-darker text-primary underline text-lg text-center mb-4 transition-colors duration-300 cursor-pointer"
         >
           Return to top
         </p>
@@ -201,16 +201,6 @@ export default function Footer() {
                     role="img"
                   >
                     <use href="/assets/img/sprite.svg#youtube"></use>
-                  </svg>
-                </a>
-                <a className="text-white">
-                  <svg
-                    className="usa-icon hover:text-blue-800"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#facebook"></use>
                   </svg>
                 </a>
                 <a className="text-white">

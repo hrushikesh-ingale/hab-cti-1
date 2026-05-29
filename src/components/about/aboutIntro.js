@@ -1,6 +1,6 @@
 export default function AboutIntro() {
   return (
-    <div className="px-20 py-20 tracking-wide font-light">
+    <div className="px-20 py-20 text-lg tracking-wide font-light">
       <p>
         The{" "}
         <b>
@@ -37,30 +37,37 @@ export default function AboutIntro() {
       </div>
 
       {/* Our Partners */}
-      <div className="flex flex-row gap-75 mt-18">
+      <div className="flex flex-row gap-50 mt-15">
         <h1 className="font-bold text-2xl whitespace-nowrap">Our Partners</h1>
-        <div className="ml-16 flex flex-row gap-10">
-          <div>
-            <img src="/NOAA.svg" className="w-24 h-24 object-contain" />{" "}
-            <div className="text-primary font-bold mt-8">
+        <div className="flex flex-row gap-10">
+          <div className="flex flex-row items-center gap-6">
+            <img
+              src="/NOAA.svg"
+              className="w-20 h-20 object-contain shrink-0"
+            />
+            <div className="text-primary font-bold">
               <p>National Oceanic and</p>
               <p>Atmospheric Administration</p>
               <p>(NOAA)</p>
             </div>
           </div>
-
-          <div>
-            <img src="/IMET.jpg" className="w-24 h-24 object-contain" />{" "}
-            <div className="text-primary font-bold mt-8">
+          <div className="flex flex-row items-center gap-6">
+            <img
+              src="/IMET.jpg"
+              className="w-20 h-20 object-contain shrink-0"
+            />
+            <div className="text-primary font-bold">
               <p>Institute of Marine and</p>
               <p>Environmental Technology</p>
               <p>(IMET)</p>
             </div>
           </div>
-
-          <div>
-            <img src="/mote.png" className="w-24 h-24 object-contain" />{" "}
-            <div className="text-primary font-bold mt-8">
+          <div className="flex flex-row items-center gap-6">
+            <img
+              src="/mote.png"
+              className="w-20 h-20 object-contain shrink-0"
+            />
+            <div className="text-primary font-bold">
               <p>Mote Marine Laboratory</p>
               <p>(MOTE)</p>
             </div>
