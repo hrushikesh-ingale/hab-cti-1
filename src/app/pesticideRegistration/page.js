@@ -1,4 +1,4 @@
-export default function ResearchRequirements() {
+export default function PesticideRegistration() {
   return (
     <div className="px-20 py-10 tracking-wide">
       {/* Breadcrumb */}
@@ -15,15 +15,17 @@ export default function ResearchRequirements() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Laws and Permits</span>
+        <span className="text-primary">Permiting Laws</span>
         <span>›</span>
-        <span className="text-gray-800">
-          Research Requirements and Guidelines
-        </span>
+        <a className="text-primary hover:underline" href="/fifra">
+          FIFRA
+        </a>
+        <span>›</span>
+        <span className="text-gray-800">Pesticide Registration</span>
       </div>
 
       {/* WIP */}
-      <div className="text-center mb-8 mt-10">
+      <div className="text-center mb-8 mt-4">
         <h1 className="text-3xl text-primary font-bold">
           This page is currently under development
         </h1>

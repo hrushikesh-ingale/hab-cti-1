@@ -75,6 +75,12 @@ const tabs = {
           "Microbial pesticides can control many different kinds of pests, although each seperate active ingredient is relatively specific for its target pests.",
         ],
       },
+      biopesticides: {
+        label: "Biopesticides",
+        image: "Image here",
+        title: "Bio-Pesticides",
+        body: ["Information coming soon!"],
+      },
     },
   },
   // Physical Tab
@@ -83,7 +89,7 @@ const tabs = {
     icon: "wash",
     subTabs: {
       devices: {
-        label: "Devices",
+        label: "Physical Devices",
         image: "/devices.png",
         title: "Devices",
         body: [
@@ -93,9 +99,24 @@ const tabs = {
       },
     },
   },
+  // Minimum Risk Tab
+  minimum: {
+    label: "Minimum Risk Pesticides",
+    subTabs: {
+      devices: {
+        label: "Minimum Risk",
+        image: "/min-pesticide.png",
+        title: "Minimum Risk Pesticides",
+        body: [
+          "These are pesticides that meet a series of criteria determining them to pose little to no risk to human health or the environment. These pesticides are exempt from registration and label review under FIFRA.",
+          "If a product does not meet all of the exemption criteria, the product is not exempt from FIFRA regulation under 40 CFR 152.25(f), and sale or distribution of the product without registration may be a violation of FIFRA unless it is otherwise exempt from registration requirements.",
+        ],
+      },
+    },
+  },
 };
 
-export default function ControlStrategies() {
+export default function Strategies() {
   const [activeTab, setActiveTab] = useState("chemical");
   const [activeSubTab, setActiveSubTab] = useState("conventional");
 
@@ -169,17 +190,19 @@ export default function ControlStrategies() {
                   </p>
                 ))}
               </div>
-              <button className="usa-button bg-primary !mt-5 w-fit self-start">
-                Know More
-                <svg
-                  className="usa-icon"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#arrow_forward"></use>
-                </svg>
-              </button>
+              <a href="/learnMore">
+                <button className="usa-button bg-primary !mt-5 w-fit self-start">
+                  Learn More
+                  <svg
+                    className="usa-icon"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use href="/assets/img/sprite.svg#arrow_forward"></use>
+                  </svg>
+                </button>
+              </a>
             </div>
           </div>
         </div>

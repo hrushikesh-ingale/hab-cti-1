@@ -12,27 +12,27 @@ const slides = [
   {
     image: "/hero2.jpg",
     label: "WHAT WE DO",
-    tag: "US HAB-CTI",
+    tag: "US HAB CTRL",
     title: "What We Do",
     description: [
-      "The US HAB-CTI Clearinghouse helps simplify the regulatory process around harmful algal bloom (HAB) control.",
+      "The US HAB CTRL helps simplify the regulatory process around harmful algal bloom (HAB) control.",
       "We make it easier for researchers, agencies, and industry stakeholders to understand permitting requirements, reduce delays and uncertainties early in development, and access information on safe, approved products - all in one place.",
     ],
   },
   {
     image: "/hero3.jpg",
     label: "WHY IT MATTERS",
-    tag: "US HAB-CTI",
+    tag: "US HAB CTRL",
     title: "Why It Matters",
     description: [
-      "By improving transparency and clarity in the permitting process, the Clearinghouse supports faster, safer, and more informed decision-making.",
+      "By improving transparency and clarity in the permitting process, the HAB control supports faster, safer, and more informed decision-making.",
       "This reduces time, costs, and confusion for industries and researchers working on HAB solutions.",
     ],
   },
   {
     image: "/hero4.jpg",
     label: "WHAT WE SUPPORT",
-    tag: "US HAB-CTI",
+    tag: "US HAB CTRL",
     title: "What We Support",
     description: [
       "We aim to help users make informed decisions about HAB control by sharing guidance on when and how approved products may be used.",
@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Welcome slide */}
         {activeSlide === 0 && (
           <div className="relative z-10 py-10 px-1 text-center mb-6">
-            <p className="text-[#78a529] text-l font-bold mt-8">WELCOME TO</p>
+            <p className="text-[#78a529] text-l font-bold mt-5">WELCOME TO</p>
             <div className="font-bold text-xl leading-tight relative w-fit mx-auto after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-white after:to-transparent">
               <h1 className="!mb-0">Harmful Algal Bloom Control</h1>
               <h1 className="!mt-2">Technologies & Regulatory Logistics</h1>

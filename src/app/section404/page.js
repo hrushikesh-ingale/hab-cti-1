@@ -15,7 +15,7 @@ export default function Section404() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Permitting Laws</span>
         <span>›</span>
         <span className="text-gray-800">Clean Water Act</span>
       </div>

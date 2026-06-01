@@ -15,7 +15,7 @@ export default function SpeciesAct() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Acts Requiring Compliance</span>
         <span>›</span>
         <span className="text-gray-800">Endangered Species</span>
       </div>

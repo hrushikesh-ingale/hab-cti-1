@@ -12,7 +12,8 @@
     "@uswds/uswds": "^3.13.0",
     "next": "16.2.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-simple-maps": "^3.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -101,15 +101,12 @@ export default function Footer() {
                 >
                   Regulations Directory
                 </a>
-                <a
-                  className="hover:underline cursor-pointer hover:text-primary-lighter"
-                  href="/researchRequirements"
-                >
+                <a className="hover:underline cursor-pointer hover:text-primary-lighter">
                   Research Guidelines
                 </a>
                 <a
                   className="hover:underline cursor-pointer hover:text-primary-lighter"
-                  href="/fieldStudies"
+                  href="/experimentalUse"
                 >
                   Field Studies
                 </a>

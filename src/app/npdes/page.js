@@ -15,7 +15,7 @@ export default function Npdes() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Permitting Laws</span>
         <span>›</span>
         <span className="text-gray-800">NPDES</span>
       </div>

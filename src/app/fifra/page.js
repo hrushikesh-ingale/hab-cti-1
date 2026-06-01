@@ -49,7 +49,7 @@ export default function Fifra() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Permiting Laws</span>
         <span>›</span>
         <span className="text-gray-800">FIFRA</span>
       </div>
@@ -67,13 +67,18 @@ export default function Fifra() {
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 bg-black opacity-65 z-0" />
         {/* Content */}
-        <div className="relative z-10 py-16 px-1 text-center mt-5">
-          <h1 className="!text-4xl font-bold !mb-0 !mt-1">
-            Federal Insecticide, Fungicide, and
-          </h1>
-          <h1 className="!text-4xl font-bold !mb-0 !mt-1">
-            Rodenticide Act (FIFRA)
-          </h1>
+        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
+          <a
+            href="https://www.epa.gov/laws-regulations/summary-federal-insecticide-fungicide-and-rodenticide-act"
+            target="_blank"
+          >
+            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
+              Federal Insecticide, Fungicide, and
+            </h1>
+            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
+              Rodenticide Act (FIFRA)
+            </h1>
+          </a>
           <p className="text-lg !mt-3 text-gray-200">Overview</p>
         </div>
       </div>
@@ -83,7 +88,6 @@ export default function Fifra() {
         <div className="w-56 shrink-0 mt-10">
           <div className="sticky top-8">
             <p className="font-bold text-black mb-3">On this page</p>
-            {/* ADDED - active section drives border indicator */}
             <div className="border-l-2 border-gray-200 flex flex-col">
               {sections.map((section) => (
                 <p
@@ -140,10 +144,9 @@ export default function Fifra() {
               <span className="text-xl">
                 The Environmental Protection Agency (EPA){" "}
                 <a
-                  href="https://www.epa.gov/pesticide-contacts/office-pesticide-programs-contacts-division-and-topic"
+                  href="https://www.epa.gov/aboutepa/about-office-chemical-safety-and-pollution-prevention#opp"
                   className="text-primary text-underline"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Office of Pesticide Programs (OPP)
                 </a>
@@ -170,7 +173,16 @@ export default function Fifra() {
                   that did not exceed $60 million (including revenue from all
                   affiliates) during the three-year period prior to the most
                   recent maintenance fee billing cycle], a state, or federal
-                  agency, you may qualify for a PRIA fee waiver.
+                  agency, you may qualify for a{" "}
+                  <a
+                    className="text-primary text-underline"
+                    href="https://www.epa.gov/pria-fees/pria-fee-waivers-small-businesses"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    PRIA fee waiver
+                  </a>
+                  .
                 </li>
               </ul>
             </div>
@@ -209,10 +221,15 @@ export default function Fifra() {
             <div className="mb-8">
               <p>
                 To get a pesticide product legally approved as per FIFRA
-                regulations, an applicant must submit a Pesticide Product
-                Registration Application to the EPA. The pesticide registration
-                process requires a diverse compilation of data and takes several
-                years to complete.
+                regulations, an applicant must submit a{" "}
+                <a
+                  href="/pesticideRegistration"
+                  className="text-primary text-underline"
+                >
+                  Pesticide Product Registration Application
+                </a>{" "}
+                to the EPA. The pesticide registration process requires a
+                diverse compilation of data and takes several years to complete.
               </p>
               <p className="mt-5">
                 Following FIFRA approval, several other relevant acts and
@@ -230,13 +247,20 @@ export default function Fifra() {
                 visiting{" "}
                 <a
                   className="text-primary text-underline"
-                  href="https://npic.orst.edu"
+                  href="https://npic.orst.edu/reg/state_agencies.html"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   the National Pesticide Information Center
                 </a>{" "}
-                website or using the US Regulatory Map page on this site.
+                website or using the{" "}
+                <a
+                  href="/regulationsDirectory"
+                  className="text-primary text-underline"
+                >
+                  US Regulatory Map
+                </a>{" "}
+                page on this site.
               </p>
             </div>
           </div>

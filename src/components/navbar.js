@@ -25,7 +25,7 @@ export default function Navbar() {
           className="w-13 h-13 rounded-full"
         />
         <div className="text-primary">
-          <p>US HAB CTI</p>
+          <p>US HAB CTRL</p>
           <div className="mt-0.5">
             <p className="italic text-xs">HAB Control Technologies</p>
             <p className="italic text-xs">& Regulatory Logistics</p>

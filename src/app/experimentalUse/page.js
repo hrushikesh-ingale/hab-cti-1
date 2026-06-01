@@ -1,4 +1,4 @@
-export default function StatePolicies() {
+export default function ExperimentalUse() {
   return (
     <div className="px-20 py-10 tracking-wide">
       {/* Breadcrumb */}
@@ -15,9 +15,9 @@ export default function StatePolicies() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Laws and Permits</span>
         <span>›</span>
-        <span className="text-gray-800">State Policies</span>
+        <span className="text-gray-800">Experimental Use Permit</span>
       </div>
 
       {/* WIP */}

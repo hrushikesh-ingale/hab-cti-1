@@ -15,7 +15,7 @@ export default function MagnusonAct() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Acts Requiring Compliance</span>
         <span>›</span>
         <span className="text-gray-800">Magnuson-Stevens Act</span>
       </div>

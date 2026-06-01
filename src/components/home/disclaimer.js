@@ -8,7 +8,7 @@ export default function Disclaimer() {
       </p>
 
       {/* Attention! */}
-      <div className="flex flex-row mt-7">
+      <div className="flex flex-row mt-5">
         <div className="bg-[#f4e3db] text-black py-5 px-10 border-l-6 border-l-[#d54309] rounded w-full">
           <div className="font-bold">
             <div className="text-xl flex flex-row items-center gap-2">
@@ -22,7 +22,9 @@ export default function Disclaimer() {
               </svg>
               Attention!
             </div>
-            <h3>Content last updated as of: March 04, 2025, Monday</h3>
+            <h3 className="mt-3">
+              Content last updated as of: March 04, 2025, Monday
+            </h3>
           </div>
           <p className="mt-5 text-light">
             The information available through US HAB CTI's web site is provided

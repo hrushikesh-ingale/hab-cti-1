@@ -15,7 +15,7 @@ export default function Section10() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Processing Permits</span>
+        <span className="text-primary">Permitting Laws</span>
         <span>›</span>
         <span className="text-gray-800">Rivers and Harbors Act</span>
       </div>
