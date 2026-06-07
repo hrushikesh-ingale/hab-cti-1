@@ -9,7 +9,7 @@ const tabs = {
     subTabs: {
       conventional: {
         label: "Conventional Chemical",
-        image: "/lab.png",
+        image: "/conventional.png",
         title: "Conventional Chemical",
         body: [
           "Conventional pesticides are all active ingredients other than biological pesticides and antimicrobial pesticides. Conventional active ingredients are generally produced synthetically, i.e., are synthetic chemicals that prevent, mitigate, destroy, or repel any pest; or that act as a plant growth regulator, desiccant, defoliant or nitrogen stabilizer.",
@@ -18,7 +18,7 @@ const tabs = {
       },
       biochemical: {
         label: "Biochemical Pesticides",
-        image: "/bio-pesticide.png",
+        image: "/biochemical.png",
         title: "Biochemical Pesticides",
         body: [
           "Biochemical Pesticides are substances that: (1) are naturally occuring chemicals or are synthetically dervived equivalents; (2) have a history of exposure to humans and the environment demonstrating minimal toxicity, or in the case of a synthetically-derived biochemical pesticides, are equivalent to a naturally occuring chemical that have such a history; and (3) have a nontoxic mode of action to the target pest(s). Biochemical pesticides include substances, such as insect sex pheromones, which interfere with mating, as well as various scented plant extracts that attract insect pests to traps. Because it is sometimes difficult to determine whether a substance meets the criteria for classification as a biochemical pesticide, EPA has established the Biochemical Classification Committee to make such decisions.",
@@ -26,7 +26,7 @@ const tabs = {
       },
       antimicrobial: {
         label: "Antimicrobial Pesticides",
-        image: "/anti-pesticide.png",
+        image: "/antimicrobial.png",
         title: "Antimicrobial Pesticides",
         body: [
           "An antimicrobial pesticide is intended to disinfect, sanitize, reduce, or mitigate growth or development of microbiological organisms; or protect inanimate objects, industrial processes or systems, surfaces, water, or other chemical substances from contamination, fouling, or deterioration caused by bacteria, viruses, fungi, protozoa, algae, or slime; and in the intended use if exempt from, or otherwise not subject to, a tolerance or a food additive regulation.",
@@ -35,7 +35,7 @@ const tabs = {
       },
       minimum: {
         label: "Minimum Risk Pesticides",
-        image: "/min-pesticide.png",
+        image: "/minimum.png",
         title: "Minimum Risk Pesticides",
         body: [
           "These are pesticides that meet a series of criteria determining them to pose little to no risk to human health or the environment. These pesticides are exempt from registration and label review under FIFRA.",
@@ -50,18 +50,18 @@ const tabs = {
     icon: "hourglass_empty",
     subTabs: {
       biotech: {
-        label: "Bio-Technology",
-        image: "/biotech.png",
-        title: "Bio-Technology",
+        label: "Biotechnology",
+        image: "/biotechnology.png",
+        title: "Biotechnology",
         body: [
           "The science of modifying the genetic composition of plants, animals, and microorganisms.",
           "This includes Plant-Incorporated Protectants (PIPs) and genetically modified microbial pesticides.",
         ],
       },
       biomanipulation: {
-        label: "Bio-Manipulation",
-        image: "/manipulation.png",
-        title: "Bio-Manipulation",
+        label: "Biomanipulation",
+        image: "/biomanipulation.png",
+        title: "Biomanipulation",
         body: [
           "The strategy to reduce algal blooms and improve water clarity by manipulating the populations of organisms within the food web, particularly fish, shellfish, zooplankton, and aquatic plants.",
         ],
@@ -77,9 +77,11 @@ const tabs = {
       },
       biopesticides: {
         label: "Biopesticides",
-        image: "Image here",
-        title: "Bio-Pesticides",
-        body: ["Information coming soon!"],
+        image: "/biopesticides.png",
+        title: "Biopesticides",
+        body: [
+          "The EPA classifies Biopesticides as those derived from natural materials such as animals, plants, bacteria, and certain minerals. For example, canola oil and baking soda have pesticidal applications and are considered biopesticides.",
+        ],
       },
     },
   },
@@ -104,7 +106,7 @@ const tabs = {
     label: "Minimum Risk Pesticides",
     subTabs: {
       devices: {
-        label: "Minimum Risk",
+        label: "Minimum Risk Pesticides",
         image: "/min-pesticide.png",
         title: "Minimum Risk Pesticides",
         body: [

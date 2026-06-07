@@ -18,7 +18,7 @@ export default function Navigation() {
         </legend>
 
         <div className="flex flex-row gap-6 mt-4">
-          <a href="/pesticideRegistration" className="block w-full">
+          <a href="/researchRequirements" className="block w-full">
             <div className="relative border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
               <p className="font-semibold text-black">
                 <svg

@@ -16,7 +16,7 @@ export default function Agencies() {
       {/* Permitting Laws/ First Row */}
       <div className="flex flex-row mt-5 gap-5">
         {/* FIFRA */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
@@ -47,7 +47,7 @@ export default function Agencies() {
         </div>
 
         {/* FFDCA */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
@@ -78,7 +78,7 @@ export default function Agencies() {
         </div>
 
         {/* PRIA */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
@@ -108,7 +108,7 @@ export default function Agencies() {
         </div>
 
         {/* NPDES */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
@@ -132,7 +132,7 @@ export default function Agencies() {
             </p>
           </div>
           <a
-            href="/learnMore"
+            href="/npdes"
             className="text-sm font-bold underline text-black mt-auto pt-4 inline-block hover:text-primary transition-colors duration-200"
           >
             Learn More
@@ -143,8 +143,8 @@ export default function Agencies() {
       {/* Permitting Laws/ Second Row */}
       <div className="flex flex-row mt-5 gap-5">
         {/* State Policies */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
-          <img src="/us-map.png" className="w-16 h-16 mb-3 object-contain" />
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
+          <img src="/usmap.png" className="w-20 h-20 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
               className="usa-icon"
@@ -158,7 +158,15 @@ export default function Agencies() {
           </div>
           <p className="font-semibold text-lg">State Policies and Permits</p>
           <div className="mt-3 text-sm flex-1">
-            <p>More information coming soon!</p>
+            <p>
+              Each state has its own pesticide permitting and registration
+              process. Although additional regulations may apply, each state
+              must follow the minimum pesticide requirements set forth by FIFRA.
+              State-specific entities such as the Department of Natural
+              Resources, Department of Public Health, and State Wildlife
+              Commissions are often involved in the review of Experimental Use
+              Permit applications and pesticide registration.
+            </p>
           </div>
           <a
             href="/regulationsDirectory"
@@ -169,7 +177,7 @@ export default function Agencies() {
         </div>
 
         {/* MPRSA */}
-        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 bg-primary-lighter border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <div className="absolute top-3 right-3 bg-[#78a529] p-1 px-2 rounded-2xl text-white font-bold flex flex-row items-center gap-1 text-sm">
             <svg
@@ -182,10 +190,8 @@ export default function Agencies() {
             </svg>
             Primary
           </div>
-          <p className="font-semibold text-lg">Marine Protection,</p>
-          <p className="font-semibold text-lg">
-            Research and Sanctuaries Act (MPRSA)
-          </p>
+          <p className="font-semibold text-lg">Marine Protection, Research</p>
+          <p className="font-semibold text-lg">and Sanctuaries Act (MPRSA)</p>
           <div className="mt-3 text-sm flex-1">
             <p>
               Regulates the intentional transportation and disposal of materials
@@ -193,7 +199,7 @@ export default function Agencies() {
             </p>
           </div>
           <a
-            href="/learnMore"
+            href="/mprsa"
             className="text-sm font-bold underline text-black mt-auto pt-4 inline-block hover:text-primary transition-colors duration-200"
           >
             Learn More
@@ -201,7 +207,7 @@ export default function Agencies() {
         </div>
 
         {/* RHA/Section 10 */}
-        <div className="relative p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/USEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">Section 10 of the Rivers and</p>
           <p className="font-semibold text-lg">Harbors Act</p>
@@ -214,7 +220,7 @@ export default function Agencies() {
             </p>
           </div>
           <a
-            href="/learnMore"
+            href="/section10"
             className="text-sm font-bold underline text-black mt-auto pt-4 inline-block hover:text-primary transition-colors duration-200"
           >
             Learn More
@@ -222,7 +228,7 @@ export default function Agencies() {
         </div>
 
         {/* Section 404 */}
-        <div className="relative p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="relative p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/castle.png" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">Section 404 of the Clean</p>
           <p className="font-semibold text-lg">Water Act</p>
@@ -253,7 +259,7 @@ export default function Agencies() {
       {/* Acts Requiring Compliance/ first row */}
       <div className="flex flex-row mt-5 gap-5">
         {/* Species Act */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/fish.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">Endangered Species Act</p>
           <div className="mt-3 text-sm flex-1">
@@ -267,7 +273,7 @@ export default function Agencies() {
             </p>
           </div>
           <a
-            href="/learnMore"
+            href="/esa"
             className="text-sm font-bold underline text-black mt-auto pt-4 inline-block hover:text-primary transition-colors duration-200"
           >
             Learn More
@@ -275,7 +281,7 @@ export default function Agencies() {
         </div>
 
         {/* Stevens Act */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/NOAA.svg" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">Magnuson-Stevens Act</p>
           <div className="mt-3 text-sm flex-1">
@@ -293,7 +299,7 @@ export default function Agencies() {
         </div>
 
         {/* MMPA */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/NOAA.svg" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">Marine Mammal Protection</p>
           <p className="font-semibold text-lg">Act (MMPA)</p>
@@ -306,7 +312,7 @@ export default function Agencies() {
             </p>
           </div>
           <a
-            href="/learnMore"
+            href="/mmpa"
             className="text-sm font-bold underline text-black mt-auto pt-4 inline-block hover:text-primary transition-colors duration-200"
           >
             Learn More
@@ -314,7 +320,7 @@ export default function Agencies() {
         </div>
 
         {/* NEPA */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/NEPA.svg.png" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">National Environment Policy</p>
           <p className="font-semibold text-lg">Act (NEPA)</p>
@@ -336,12 +342,22 @@ export default function Agencies() {
       {/* Acts Requiring Compliance/ second row */}
       <div className="flex flex-row mt-5 gap-5">
         {/* MBTA */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/fish.svg.png" className="w-16 h-16 mb-3 object-contain" />
-          <p className="font-semibold text-lg">Migratory Birds Treaty</p>
-          <p className="font-semibold text-lg">Act (MBTA)</p>
+          <p className="font-semibold text-lg">
+            Migratory Birds Treaty Act (MBTA)
+          </p>
           <div className="mt-3 text-sm flex-1">
-            <p>More information coming soon!</p>
+            <p>
+              Prevents the taking, possession, transportation, sale, purchase,
+              barter, importation, exportation, and banding or marking of
+              migratory birds unless otherwise permitted. Under the MBTA, “take”
+              refers to bird death by intentional (hunting) or incidental means.
+              As “incidental taking” may result from human activities that
+              disturb bird behavior, migratory bird habitats essential to
+              standard behaviors, including nesting, foraging, and migration,
+              are also protected under this act.
+            </p>
           </div>
           <a
             href="/learnMore"
@@ -352,12 +368,19 @@ export default function Agencies() {
         </div>
 
         {/* NMSA */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/NOAA.svg" className="w-16 h-16 mb-3 object-contain" />
-          <p className="font-semibold text-lg">National Marine Sanctuaries</p>
-          <p className="font-semibold text-lg">Act (NMSA)</p>
+          <p className="font-semibold text-lg">
+            National Marine Sanctuaries Act (NMSA)
+          </p>
           <div className="mt-3 text-sm flex-1">
-            <p>More information coming soon!</p>
+            <p>
+              Authorizes the Secretary of Commerce to designate and protect
+              areas of the marine environment with special national significance
+              due to their conservation, recreational, ecological, historical,
+              scientific, cultural, archeological, educational or esthetic
+              qualities as national marine sanctuaries.
+            </p>
           </div>
           <a
             href="/learnMore"
@@ -368,14 +391,19 @@ export default function Agencies() {
         </div>
 
         {/* CZMA */}
-        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col">
+        <div className="p-3 border-gray-300 border-t-2 border-l-2 border-r-2 border-b-2 rounded w-full flex flex-col hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300">
           <img src="/NOAA.svg" className="w-16 h-16 mb-3 object-contain" />
           <p className="font-semibold text-lg">
             Section 307 of the Coastal Zone Management
           </p>
           <p className="font-semibold text-lg">Act (CZMA)</p>
           <div className="mt-3 text-sm flex-1">
-            <p>More information coming soon!</p>
+            <p>
+              Referred to as the “federal consistency” provision of the CZMA,
+              gives states a strong voice in federal agency decision making,
+              which they otherwise would not have, for activities that may
+              affect a state’s coastal uses or resources.
+            </p>
           </div>
           <a
             href="/learnMore"

@@ -49,17 +49,9 @@ export default function Mprsa() {
           Home
         </a>
         <span>›</span>
-        <span className="text-primary">Permitting Laws</span>
+        <span className="text-primary">Permiting Laws</span>
         <span>›</span>
         <span className="text-gray-800">MPRSA</span>
-      </div>
-
-      {/* WIP */}
-      <div className="text-center mb-8 mt-4">
-        <h1 className="text-3xl text-primary font-bold">
-          This page is currently under development
-        </h1>
-        <p>Please check back soon!</p>
       </div>
 
       {/* background image */}
@@ -67,12 +59,10 @@ export default function Mprsa() {
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 bg-black opacity-65 z-0" />
         {/* Content */}
-        <div className="relative z-10 py-16 px-1 text-center mt-5">
+        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
           <a
-            className="hover:scale-110 "
             href="https://www.epa.gov/marine-protection-permitting"
             target="_blank"
-            rel="noopener noreferrer"
           >
             <h1 className="!text-4xl font-bold !mb-0 !mt-1">
               Marine Protection, Research and
@@ -81,7 +71,7 @@ export default function Mprsa() {
               Sanctuaries Act (MPRSA)
             </h1>
           </a>
-          <p className="text-lg !mt-3 text-gray-200">Overview</p>
+          <p className="text-lg !mt-3 text-gray-200">MPRSA Overview</p>
         </div>
       </div>
 
@@ -90,7 +80,6 @@ export default function Mprsa() {
         <div className="w-56 shrink-0 mt-10">
           <div className="sticky top-8">
             <p className="font-bold text-black mb-3">On this page</p>
-            {/* ADDED - active section drives border indicator */}
             <div className="border-l-2 border-gray-200 flex flex-col">
               {sections.map((section) => (
                 <p
@@ -116,12 +105,12 @@ export default function Mprsa() {
             className="border-b-4 border-primary-lighter mt-10"
           >
             <h1 className="text-primary font-bold">Background</h1>
-            <p className="mb-8">
+            <p className="mb-8 text-lg">
               The Marine Protection, Research and Sanctuaries Act (MPRSA) was
-              enacted by the U.S. Congress in 1972. MPRSA regulates the
+              enacted by the U.S Congress in 1972. MPRSA regulates the
               transportation and disposition of materials in the ocean that
-              would adversely affect human health, welfare, or amentities, or
-              the marine environment, ecological systems, or economic
+              would adversely affect human health, welfare, or amenities, or the
+              marine environment, ecological systems, or economic
               potentialities.
             </p>
           </div>
@@ -129,19 +118,16 @@ export default function Mprsa() {
           {/* implementing agency section */}
           <div
             id="implementing-agency"
-            className="border-b-4 border-primary-lighter"
+            className="border-b-4 border-primary-lighter text-lg"
           >
-            <h1 className="text-primary font-bold">Implementing Agency</h1>
-            <div className="mb-8">
-              <ul className="ml-10">
-                <li>EPA</li>
-                <li>
-                  US Army Corps of Engineers (authorization of dredge
-                  disposition)
-                </li>
-                <li>US Coast Guard (surveillance)</li>
-              </ul>
+            <h1 className="text-primary font-bold">Implementing Agency(s)</h1>
+            <div className="mb-6">
+              <p>
+                EPA, US Army Corps of Engineers (authorization of dredge
+                disposition), US Coast Guard (surveillance)
+              </p>
             </div>
+            <div className="mb-8"></div>
           </div>
 
           {/* regulatory application */}
@@ -150,35 +136,35 @@ export default function Mprsa() {
             className="border-b-4 border-primary-lighter"
           >
             <h1 className="text-primary font-bold">Regulatory Application</h1>
-            <div className="mb-8">
+            <div className="mb-8 text-lg">
               <p>
-                MPRSA regulates the "dumping" of any material in the ocean
-                seaward of the baseline. The baseline is defined as the mean
-                lower low water line, or ordinary low water mark, along the
+                MPRSA regulates the “dumping” of{" "}
+                <span className="text-underline">any material</span> in the
+                ocean seaward of the baseline. The baseline is defined as the
+                mean lower low water line, or ordinary low water mark, along the
                 coast and the "closing lines" across river mouths and openings
                 of bays that are depicted on official United States Nautical
-                Charts (
+                Charts{" "}
                 <a
-                  className="text-primary text-underline hover:text-primary-darker"
                   href="https://www.epa.gov/marine-protection-permitting/marine-protection-research-and-sanctuaries-act-permits-frequently#whenismprsapermitrequired"
+                  className="text-primary text-underline"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  see a map defining the baseline
+                  (see a map defining the baseline
                 </a>
                 ). The use of any algaecide product that will not be physically
                 recovered from waters seaward of the baseline requires a permit
                 under MPRSA.
               </p>
-              <div className="ml-10">
-                <ul className="mt-5">
-                  <li>
-                    <b>Environment: Saltwater</b>
+              <div className="mt-5">
+                <ul>
+                  <li className="whitespace-nowrap">
+                    <b>Environment:</b> Saltwater
                   </li>
                   <li className="mt-5">
-                    <b>Waterbody:</b> Territorial seas (coastline out to 3nm),
-                    Contiguous zone (3-9 nm off coastline), Economic exclusive
-                    zone (200 nm), High seas (⧁ 200 nm)
+                    <b>Waterbody:</b> Territorial seas (coastline out to 3 nm),
+                    Contiguous zone (3 - 9 nm off coastline), Economic exclusive
+                    zone (200 nm), High seas (greater than 200 nm)
                   </li>
                   <li className="mt-5">
                     <b>Algaecide classification:</b> Conventional pesticide,
@@ -186,11 +172,28 @@ export default function Mprsa() {
                   </li>
                   <li className="mt-5">
                     <b>Related regulatory acts and permits:</b>{" "}
-                    <a className="text-primary">ESA, RHA, CWA, MMPA</a>
+                    <a className="text-underline text-primary" href="/esa">
+                      ESA
+                    </a>
+                    ,{" "}
+                    <a
+                      className="text-underline text-primary"
+                      href="/section10"
+                    >
+                      RHA
+                    </a>
+                    ,{" "}
+                    <a className="text-underline text-primary" href="/npdes">
+                      CWA
+                    </a>
+                    ,{" "}
+                    <a className="text-underline text-primary" href="/mmpa">
+                      MMPA
+                    </a>{" "}
                     <p>
                       Description: Algaecide use in coastal systems requires
-                      compliance with the EPA's Endangered Species Act and may
-                      require permitting through the US Army Corps of Engineers'
+                      compliance with the EPA’s Endangered Species Act and may
+                      require permitting through the US Army Corps of Engineers’
                       Rivers and Harbors Act. The release of non-recoverable
                       algaecides into the waters of the US (WOTUS) requires an
                       NPDES permit.
@@ -214,46 +217,61 @@ export default function Mprsa() {
             <h1 className="text-primary font-bold">
               Permit(s) applicable to algaecide use
             </h1>
-            <div className="mb-8 text-primary text-underline flex flex-col gap-3">
-              <a
-                href="https://www.epa.gov/marine-protection-permitting/mprsa-research-permits"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Research Permit
-              </a>
-              <a
-                href="https://www.epa.gov/marine-protection-permitting/mprsa-general-permits"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                General Permit
-              </a>
-              <a
-                href="https://www.epa.gov/marine-protection-permitting/marine-protection-research-and-sanctuaries-act-permits-frequently"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MPRSA Permit FAQs
-              </a>
+            <div className="mb-8 text-lg">
+              <p>
+                <a
+                  href="https://www.epa.gov/marine-protection-permitting/mprsa-research-permits"
+                  className="text-primary text-underline"
+                  target="_blank"
+                >
+                  Research Permit
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.epa.gov/marine-protection-permitting/mprsa-general-permits"
+                  className="text-primary text-underline"
+                  target="_blank"
+                >
+                  General Permit
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.epa.gov/marine-protection-permitting/marine-protection-research-and-sanctuaries-act-permits-frequently"
+                  className="text-primary text-underline"
+                  target="_blank"
+                >
+                  MPRSA Permit FAQs
+                </a>
+              </p>
             </div>
           </div>
 
           {/* Contacts */}
           <div id="contacts">
             <h1 className="text-primary font-bold">Contacts</h1>
-
-            <div className="mt-3">
-              <span>
-                <b>Research Permits:</b>{" "}
-                <p className="text-primary">
+            <p className="text-lg">
+              Office of Pesticides Products (OPP) Contacts
+            </p>
+            <div className="mt-5 flex flex-col gap-3">
+              <p>
+                Research Permits:{" "}
+                <a
+                  className="text-primary text-lg"
+                  href="mailto:MarineProtectionPermitting@epa.gov"
+                >
                   MarineProtectionPermitting@epa.gov
-                </p>
-              </span>
-              <span>
-                <b>For all other inquiries, contact your</b>{" "}
-                <p className="text-primary">Regional MPRSA Agent.</p>
-              </span>
+                </a>
+              </p>
+              <p>
+                For all other inquiries, contact your {""}
+                <a
+                  href="https://www.epa.gov/marine-protection-permitting/forms/marine-protection-permitting-program-regional-contacts"
+                  className="text-primary text-underline text-lg"
+                  target="_blank"
+                >
+                  Regional MPRSA Agent.
+                </a>
+              </p>
             </div>
           </div>
         </div>

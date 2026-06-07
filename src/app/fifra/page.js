@@ -54,14 +54,6 @@ export default function Fifra() {
         <span className="text-gray-800">FIFRA</span>
       </div>
 
-      {/* WIP */}
-      <div className="text-center mb-8 mt-4">
-        <h1 className="text-3xl text-primary font-bold">
-          This page is currently under development
-        </h1>
-        <p>Please check back soon!</p>
-      </div>
-
       {/* background image */}
       <div className="relative text-white mt-4 h-60">
         <div className="absolute inset-0 bg-cover bg-center" />
@@ -113,7 +105,7 @@ export default function Fifra() {
             className="border-b-4 border-primary-lighter mt-10"
           >
             <h1 className="text-primary font-bold">Background</h1>
-            <p className="mb-8">
+            <p className="mb-8 text-lg">
               The Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA) is
               an EPA-enforced act that regulates the distribution, sale,
               production, and use of pesticides and pesticide devices in the
@@ -125,9 +117,9 @@ export default function Fifra() {
               little active enforcement of pesticides following their approval,
               registering a pesticide with FIFRA is a time-consuming and
               data-intensive process. Pesticides will only be approved if 1.)
-              the registrant supplies ample data to demonstrate that the
+              The registrant supplies ample data to demonstrate that the
               pesticide works as intended without adverse impact to humans,
-              non-target organisms, and environments, and 2.) the EPA's analyses
+              non-target organisms, and environments, and 2.) The EPA's analyses
               of the registrant's data and existing scientific literature
               indicate a pesticide can be used with "reasonable certainty of no
               harm."
@@ -137,7 +129,7 @@ export default function Fifra() {
           {/* implementing agency section */}
           <div
             id="implementing-agency"
-            className="border-b-4 border-primary-lighter"
+            className="border-b-4 border-primary-lighter text-lg"
           >
             <h1 className="text-primary font-bold">Implementing Agency</h1>
             <div className="mb-6">
@@ -159,15 +151,15 @@ export default function Fifra() {
                   the Pesticide Registration Improvement Act (PRIA), play a
                   large role in the FIFRA approval process
                 </li>
-                <li>
+                <li className="mt-3">
                   FFDCA mandates the establishment of minimum pesticide residue
-                  tolerances
+                  tolerance or tolerance exemption
                 </li>
-                <li>
+                <li className="mt-3">
                   PRIA enacts various fees associated with pesticide
                   registration.
                 </li>
-                <li>
+                <li className="mt-3 ml-5">
                   If you are a small business [defined as 500 or fewer
                   employees, and an annual global across revenue from pesticides
                   that did not exceed $60 million (including revenue from all
@@ -194,19 +186,19 @@ export default function Fifra() {
             className="border-b-4 border-primary-lighter"
           >
             <h1 className="text-primary font-bold">Regulatory Application</h1>
-            <div className="mb-8">
+            <div className="mb-8 text-lg">
               <p>
                 All algaecides must be registered and approved by the EPA before
                 use, with some exceptions:
               </p>
               <br></br>
               <ol className="ml-10">
-                <li>1. products consisting of only minimum risk ingredients</li>
+                <li>1. Products consisting of only minimum risk ingredients</li>
                 <li>
-                  2. permitted experimental use of pesticides in field studies
+                  2. Permitted experimental use of pesticides in field studies
                 </li>
                 <li>
-                  3. products whose algaecidal function is achieved via physical
+                  3. Products whose algaecidal function is achieved via physical
                   means
                 </li>
               </ol>
@@ -218,7 +210,7 @@ export default function Fifra() {
             <h1 className="text-primary font-bold">
               Permit(s) applicable to algaecide use
             </h1>
-            <div className="mb-8">
+            <div className="mb-8 text-lg">
               <p>
                 To get a pesticide product legally approved as per FIFRA
                 regulations, an applicant must submit a{" "}
@@ -233,12 +225,8 @@ export default function Fifra() {
               </p>
               <p className="mt-5">
                 Following FIFRA approval, several other relevant acts and
-                regulations police pesticide application. See the{" "}
-                <a className="text-primary text-underline" href="/">
-                  Acts & Regulations
-                </a>{" "}
-                {""}
-                tab on the homepage to learn more.
+                regulations police pesticide application. See the Acts &
+                Regulations tab on the homepage to learn more.
               </p>
               <p className="mt-5">
                 Additionally, each state has unique pesticide policies, and
@@ -268,24 +256,46 @@ export default function Fifra() {
           {/* Contacts */}
           <div id="contacts">
             <h1 className="text-primary font-bold">Contacts</h1>
-            <p>Office of Pesticides Products (OPP) Contacts</p>
-            <div className="mt-5">
-              <span>
-                <b>Direction of Edward Messina,</b>{" "}
-                <p className="text-primary">messina.edward@epa.gov</p>
-              </span>
-              <span>
+            <p className="text-lg">
+              Office of Pesticides Products (OPP) Contacts
+            </p>
+            <div className="mt-5 flex flex-col gap-3">
+              <p>
+                <b>Director Edward Messina,</b>{" "}
+                <a
+                  className="text-primary text-lg text-underline"
+                  href="mailto:messina.edward@epa.gov"
+                >
+                  messina.edward@epa.gov
+                </a>
+              </p>
+              <p>
                 <b>Deputy Director Elizabeth Vizard,</b>{" "}
-                <p className="text-primary">vizard.elizabeth@epa.gov</p>
-              </span>
-              <span>
+                <a
+                  className="text-primary text-lg text-underline"
+                  href="mailto:vizard.elizabeth@epa.gov"
+                >
+                  vizard.elizabeth@epa.gov
+                </a>
+              </p>
+              <p>
                 <b>Deputy Director of Management Leo Gueriguian,</b>{" "}
-                <p className="text-primary">gueriguian.leo@epa.gov</p>
-              </span>
-              <span>
-                <b>Pesticide Registration Director Charles "Billy" Smith, </b>
-                <p className="text-primary">smith.charles@epa.gov</p>
-              </span>
+                <a
+                  className="text-primary text-lg text-underline"
+                  href="mailto:gueriguian.leo@epa.gov"
+                >
+                  gueriguian.leo@epa.gov
+                </a>
+              </p>
+              <p>
+                <b>Pesticide Registration Director Charles "Billy" Smith,</b>{" "}
+                <a
+                  className="text-primary text-lg text-underline"
+                  href="mailto:smith.charles@epa.gov"
+                >
+                  smith.charles@epa.gov
+                </a>
+              </p>
             </div>
           </div>
         </div>
