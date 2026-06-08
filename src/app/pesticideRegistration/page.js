@@ -17,7 +17,7 @@ export default function PesticideRegistration() {
         <span>›</span>
         <span className="text-primary">Permiting Laws</span>
         <span>›</span>
-        <a className="text-primary hover:underline" href="/fifra">
+        <a className="text-primary text-underline" href="/fifra">
           FIFRA
         </a>
         <span>›</span>
@@ -25,7 +25,7 @@ export default function PesticideRegistration() {
       </div>
 
       {/* WIP */}
-      <div className="text-center mb-8 mt-4">
+      <div className="text-center mb-8 mt-10">
         <h1 className="text-3xl text-primary font-bold">
           This page is currently under development
         </h1>
