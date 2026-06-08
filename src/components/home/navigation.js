@@ -1,340 +1,170 @@
+import Link from "next/link";
+
+const lawsAndPermits = [
+  {
+    title: "Research Requirements",
+    description: "Data Requirements for EPA Registration",
+    href: "/researchRequirements",
+    icon: "star",
+  },
+  {
+    title: "Field Studies",
+    description: "Experimental Use Permits",
+    href: "/experimentalUse",
+    icon: "construction_worker",
+  },
+  {
+    title: "External Resources",
+    description: "Learn More!",
+    href: "/externalResources",
+    icon: "link",
+  },
+  {
+    title: "Getting an Approval",
+    description: "Permits & Regulations",
+    href: "/gettingApproval",
+    icon: "thumb_up_alt",
+  },
+  {
+    title: "Regulatory Agencies",
+    description: "Federal & State Regulations",
+    href: "/regulationsDirectory",
+    icon: "topic",
+  },
+];
+
+const literature = [
+  {
+    title: "HABs 101",
+    description: "Species, Impacts, Research, Resources, Response",
+    href: "/habs101",
+    icon: "public",
+  },
+  {
+    title: "Literature Search",
+    description: "Publications on HAB control technologies",
+    href: "/literatureSearch",
+    icon: "local_library",
+  },
+  {
+    title: "Consultants Database",
+    description: "Get Consultants or Experts",
+    href: "/consultantsDatabase",
+    icon: "contact_page",
+  },
+  {
+    title: "Control Technologies",
+    description: "Common Concepts",
+    href: "/controlTechnologies",
+    icon: "history",
+  },
+];
+
+const products = [
+  {
+    title: "Registered Products",
+    description: "Product Catalogue",
+    href: "/registeredProducts",
+    icon: "verified",
+  },
+  {
+    title: "Patent Search",
+    description: "IP, Inventorship Agreements & Registration Information",
+    href: "/patentSearch",
+    icon: "search",
+  },
+];
+
+function ToolCard({ item }) {
+  return (
+    <Link
+      href={item.href}
+      className="group block h-full rounded-md border border-gray-300 bg-white p-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:p-5"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex min-w-0 items-start gap-3">
+          <svg
+            className="usa-icon mt-0.5 shrink-0 text-xl"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+          >
+            <use href={`/assets/img/sprite.svg#${item.icon}`}></use>
+          </svg>
+
+          <div className="min-w-0">
+            <p className="font-semibold leading-snug text-black">
+              {item.title}
+            </p>
+            <p className="mt-1 text-sm leading-snug text-gray-700">
+              {item.description}
+            </p>
+          </div>
+        </div>
+
+        <svg
+          className="usa-icon mt-0.5 shrink-0 text-xl transition-transform duration-300 group-hover:translate-x-0.5"
+          aria-hidden="true"
+          focusable="false"
+          role="img"
+        >
+          <use href="/assets/img/sprite.svg#launch"></use>
+        </svg>
+      </div>
+    </Link>
+  );
+}
+
+function ToolSection({ title, items, className = "", gridClassName = "" }) {
+  return (
+    <fieldset
+      className={`rounded-xl border border-primary px-4 py-6 font-medium sm:px-6 sm:py-8 lg:px-8 ${className}`}
+    >
+      <legend className="px-2 text-base font-medium text-primary">
+        {title}
+      </legend>
+
+      <div className={`mt-4 grid grid-cols-1 gap-4 sm:gap-6 ${gridClassName}`}>
+        {items.map((item) => (
+          <ToolCard key={item.title} item={item} />
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
 export default function Navigation() {
   return (
-    <div className="px-20 py-10 tracking-wide">
+    <section className="w-full px-4 py-8 tracking-wide sm:px-6 sm:py-10 lg:px-10 xl:px-20">
       {/* Heading */}
-      <p className="text-green text-sm font-semibold">RESOURCE NAVIGATION</p>
-      <p className="font-bold text-3xl text-(--black)] mt-1">
+      <p className="text-sm font-semibold text-green">RESOURCE NAVIGATION</p>
+
+      <h2 className="mt-1 text-2xl font-bold text-gray-900 sm:text-3xl">
         Quick Access to Key Tools
-      </p>
-      <p className="text-sm text-(--gray)] mt-2 max-w-xl whitespace-nowrap">
+      </h2>
+
+      <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
         Easily find permits, research, technologies, and approved products
         related to HAB control.
       </p>
 
       {/* Laws and Permit Section */}
-      <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-10 px-10 mt-8 font-medium">
-        <legend className="text-primary px-2 text-l font-medium">
-          Laws and Permits
-        </legend>
+      <ToolSection
+        title="Laws and Permits"
+        items={lawsAndPermits}
+        className="mt-8"
+        gridClassName="md:grid-cols-2 xl:grid-cols-3"
+      />
 
-        <div className="flex flex-row gap-6 mt-4">
-          <a href="/researchRequirements" className="block w-full">
-            <div className="relative border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <p className="font-semibold text-black">
-                <svg
-                  className="usa-icon mr-8 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#star"></use>
-                </svg>
-                <svg
-                  className="usa-icon absolute left-80 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#launch"></use>
-                </svg>
-                Research Requirements
-              </p>
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+        <ToolSection
+          title="Literature"
+          items={literature}
+          gridClassName="md:grid-cols-2"
+        />
 
-              <p className="text-sm text-gray-700 mt-1 ml-18">
-                Data Requirements for EPA Registration
-              </p>
-            </div>
-          </a>
-
-          <a href="/experimentalUse" className="block w-full">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <p className="font-semibold text-black">
-                <svg
-                  className="usa-icon mr-8 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#construction_worker"></use>
-                </svg>
-                <svg
-                  className="usa-icon absolute left-80 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#launch"></use>
-                </svg>
-                Field Studies
-              </p>
-              <p className="text-sm text-gray-700 mt-1 ml-18">
-                Experimental Use Permits
-              </p>
-            </div>
-          </a>
-          <a href="/externalResources" className="block w-full">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <p className="font-semibold text-black">
-                <svg
-                  className="usa-icon mr-8 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#link"></use>
-                </svg>
-                <svg
-                  className="usa-icon absolute left-80 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#launch"></use>
-                </svg>
-                External Resources
-              </p>
-              <p className="text-sm text-gray-700 mt-1 ml-18">Learn More!</p>
-            </div>
-          </a>
-        </div>
-
-        <div className="flex flex-row gap-6 mt-6">
-          <a href="/gettingApproval" className="block w-full">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <p className="font-semibold text-black">
-                <svg
-                  className="usa-icon mr-8 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#thumb_up_alt"></use>
-                </svg>
-                <svg
-                  className="usa-icon absolute left-145 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#launch"></use>
-                </svg>
-                Getting an Approval
-              </p>
-              <p className="text-sm text-gray-700 mt-1 ml-18">
-                Permits & Regulations
-              </p>
-            </div>
-          </a>
-          <a href="/regulationsDirectory" className="block w-full">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <p className="font-semibold text-black">
-                <svg
-                  className="usa-icon mr-8 text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#topic"></use>
-                </svg>
-                <svg
-                  className="usa-icon absolute left-145  text-xl"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use href="/assets/img/sprite.svg#launch"></use>
-                </svg>
-                Regulatory Agencies
-              </p>
-              <p className="text-sm text-gray-700 mt-1 ml-18">
-                Federal & State Regulations
-              </p>
-            </div>
-          </a>
-        </div>
-      </fieldset>
-
-      {/* Literature */}
-      <div className="flex flex-row gap-8 mt-10">
-        <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-8 px-8 w-2/3">
-          <legend className="text-primary px-2 text-l font-medium">
-            Literature
-          </legend>
-
-          <div className="flex flex-row gap-6 mt-4">
-            <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-              <a href="/habs101" className="block w-full">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#public"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  HABs 101
-                </p>
-                <p className="text-sm text-gray-600 mt-1 ml-18">
-                  Species, Impacts, Research, Resources, Response
-                </p>
-              </a>
-            </div>
-
-            <a href="/literatureSearch" className="block w-full">
-              <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#local_library"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  Literature Search
-                </p>
-                <p className="text-sm text-gray-600 mt-1 ml-18">
-                  Publications on HAB control technologies
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div className="flex flex-row gap-6 mt-6">
-            <a href="/consultantsDatabase" className="block w-full">
-              <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#contact_page"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  Consultants Database
-                </p>
-                <p className="text-sm text-gray-600 mt-1 ml-18">
-                  Get Consultants or Experts
-                </p>
-              </div>
-            </a>
-            <a href="/controlTechnologies" className="block w-full">
-              <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 w-full bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#history"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  Control Technologies
-                </p>
-                <p className="text-sm text-gray-600 mt-1 ml-18">
-                  Common Concepts
-                </p>
-              </div>
-            </a>
-          </div>
-        </fieldset>
-
-        {/* Products */}
-        <fieldset className="border-b-2 border-l-2 border-r-2 border-t-2 border-primary rounded-xl py-8 px-8 w-1/3">
-          <legend className="text-primary px-2 text-l font-medium">
-            Products
-          </legend>
-
-          <div className="flex flex-col gap-6 mt-4">
-            <a href="/registeredProducts" className="block w-full">
-              <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#verified"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  Registered Products
-                </p>
-                <p className="text-sm text-gray mt-1 ml-18">
-                  Product Catalogue
-                </p>
-              </div>
-            </a>
-            <a href="/patentSearch" className="block w-full">
-              <div className="border-b-2 border-t-2 border-r-2 border-l-2 border-gray-300 rounded-md py-5 px-5 bg-white hover:scale-105 hover:shadow-[0_0_15px_rgba(0,94,162,0.3)] transition-all duration-300 cursor-pointer">
-                <p className="font-semibold text-black">
-                  <svg
-                    className="usa-icon mr-8 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#search"></use>
-                  </svg>
-                  <svg
-                    className="usa-icon absolute left-80 text-xl"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use href="/assets/img/sprite.svg#launch"></use>
-                  </svg>
-                  Patent Search
-                </p>
-                <p className="text-sm text-gray-600 mt-1 ml-18">
-                  IP, Inventorship Agreements & Registration Information
-                </p>
-              </div>
-            </a>
-          </div>
-        </fieldset>
+        <ToolSection title="Products" items={products} />
       </div>
-    </div>
+    </section>
   );
 }
