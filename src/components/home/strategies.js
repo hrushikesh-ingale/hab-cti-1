@@ -11,6 +11,7 @@ const tabs = {
         label: "Conventional Chemical",
         image: "/conventional.png",
         title: "Conventional Chemical",
+        learnMoreLink: "/conventionalPesticide",
         body: [
           "Conventional pesticides are all active ingredients other than biological pesticides and antimicrobial pesticides. Conventional active ingredients are generally produced synthetically, i.e., are synthetic chemicals that prevent, mitigate, destroy, or repel any pest; or that act as a plant growth regulator, desiccant, defoliant or nitrogen stabilizer.",
           "Wood preservative and anti-foulant products that do not have antimicrobial uses and agricultural fungicide and aquatic herbicide products are either classified as a conventional or a biochemical pesticide. Biochemical pesticides with a toxic mode of action are classified for the purposes of the registration process as conventional pesticides.",
@@ -192,7 +193,7 @@ export default function Strategies() {
                   </p>
                 ))}
               </div>
-              <a href="/learnMore">
+              <a href={currentContent.learnMoreLink || "/learnMore"}>
                 <button className="usa-button bg-primary !mt-5 w-fit self-start">
                   Learn More
                   <svg
