@@ -55,7 +55,7 @@ export default function Mprsa() {
       </div>
 
       {/* background image */}
-      <div className="relative text-white mt-4 h-60">
+      <div className="relative text-white mt-4 h-50">
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 bg-black opacity-65 z-0" />
         {/* Content */}

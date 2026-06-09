@@ -1278,7 +1278,8 @@ function getTypeLink(type) {
 
 function getGroupLink(type, group) {
   if (group.includes("Applicator Exposure")) return externalLinks.exposure875;
-  if (group.includes("Post-Application Exposure")) return externalLinks.exposure875;
+  if (group.includes("Post-Application Exposure"))
+    return externalLinks.exposure875;
 
   if (group.includes("Confidential Microbiology")) {
     return externalLinks.microbial885;
@@ -1327,7 +1328,7 @@ function RequirementCell({ value }) {
   return (
     <td
       className={`border border-black px-1 py-1 align-middle text-[11px] leading-tight xl:px-1.5 xl:text-xs ${requirementClass(
-        value
+        value,
       )}`}
     >
       {value || ""}
@@ -1497,7 +1498,7 @@ function RequirementTable({ type, rows }) {
                 <RequirementCell value={row.eupFood} />
                 <RequirementCell value={row.nonFood} />
               </tr>
-            )
+            ),
           )}
         </tbody>
       </table>
@@ -1560,27 +1561,27 @@ export default function ResearchRequirements() {
       </div>
 
       {/* background image */}
-<div className="relative text-white mt-4 h-60">
-  <div className="absolute inset-0 bg-cover bg-center" />
-  <div className="absolute inset-0 bg-black opacity-65 z-0" />
+      <div className="relative text-white mt-4 h-50">
+        <div className="absolute inset-0 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black opacity-65 z-0" />
 
-  {/* Content */}
-  <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
-    <a
-      href={externalLinks.epaDataRequirements}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block text-white no-underline hover:no-underline"
-    >
-      <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
-        Pesticide Registration Research
-      </h1>
-      <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
-        Data Requirements
-      </h1>
-    </a>
-  </div>
-</div>
+        {/* Content */}
+        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
+          <a
+            href={externalLinks.epaDataRequirements}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-white no-underline hover:no-underline"
+          >
+            <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
+              Pesticide Registration Research
+            </h1>
+            <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
+              Data Requirements
+            </h1>
+          </a>
+        </div>
+      </div>
 
       {/* scroll left side */}
       <div className="mt-10 flex flex-row gap-10">
@@ -1638,8 +1639,8 @@ export default function ResearchRequirements() {
                 *Note: “FOOD USE” does not necessarily mean a pesticide product
                 that will be used directly on food products. Pesticides used in
                 such a manner where residues may collect (establishing the need
-                for a tolerance) on food products or organisms harvested for food
-                would be classified as “FOOD USE.”
+                for a tolerance) on food products or organisms harvested for
+                food would be classified as “FOOD USE.”
               </p>
             </div>
           </div>
@@ -1656,8 +1657,8 @@ export default function ResearchRequirements() {
                 Series 810 - Product Performance Test Guidelines
               </ExternalLink>
               ) is required for all pesticide types and registration situations,
-              but tests will vary depending on the product&apos;s intended performance
-              as described in the label directions.
+              but tests will vary depending on the product&apos;s intended
+              performance as described in the label directions.
             </p>
           </div>
 
@@ -1668,7 +1669,8 @@ export default function ResearchRequirements() {
             <div className="mb-8 text-lg">
               <ul className="ml-6 list-disc">
                 <li>
-                  For more information on the test guidelines, see the EPA&apos;s{" "}
+                  For more information on the test guidelines, see the
+                  EPA&apos;s{" "}
                   <ExternalLink href={externalLinks.finalTestGuidelines}>
                     Final Test Guidelines for Pesticides and Toxic Substances
                   </ExternalLink>
@@ -1676,7 +1678,8 @@ export default function ResearchRequirements() {
                 </li>
 
                 <li className="mt-3">
-                  For more information on the FIFRA registration process, see the{" "}
+                  For more information on the FIFRA registration process, see
+                  the{" "}
                   <Link
                     href="/pesticideRegistration"
                     className="text-primary text-underline"
@@ -1691,19 +1694,25 @@ export default function ResearchRequirements() {
                   pesticide types, see the respective page(s) on this website.
                   <ul className="mt-3 ml-6 list-[circle]">
                     <li>
-                      <ExternalLink href={externalLinks.conventionalRegistration}>
+                      <ExternalLink
+                        href={externalLinks.conventionalRegistration}
+                      >
                         Conventional Pesticide Registration
                       </ExternalLink>
                     </li>
 
                     <li className="mt-3">
-                      <ExternalLink href={externalLinks.biopesticideRegistration}>
+                      <ExternalLink
+                        href={externalLinks.biopesticideRegistration}
+                      >
                         Biopesticides Registration
                       </ExternalLink>
                     </li>
 
                     <li className="mt-3">
-                      <ExternalLink href={externalLinks.antimicrobialRegistration}>
+                      <ExternalLink
+                        href={externalLinks.antimicrobialRegistration}
+                      >
                         Antimicrobial Pesticide Registration
                       </ExternalLink>
                     </li>

@@ -55,7 +55,7 @@ export default function Fifra() {
       </div>
 
       {/* background image */}
-      <div className="relative text-white mt-4 h-60">
+      <div className="relative text-white mt-4 h-50">
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 bg-black opacity-65 z-0" />
         {/* Content */}
@@ -64,10 +64,10 @@ export default function Fifra() {
             href="https://www.epa.gov/laws-regulations/summary-federal-insecticide-fungicide-and-rodenticide-act"
             target="_blank"
           >
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
+            <h1 className="!text-3xl font-bold !mb-0 !mt-1">
               Federal Insecticide, Fungicide, and
             </h1>
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
+            <h1 className="!text-3xl font-bold !mb-0 !mt-1">
               Rodenticide Act (FIFRA)
             </h1>
           </a>

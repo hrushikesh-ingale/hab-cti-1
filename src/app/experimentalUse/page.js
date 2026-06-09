@@ -7,7 +7,8 @@ const sections = [
   { id: "overview", label: "Overview" },
   {
     id: "eup-application",
-    label: "Information Required for the EPA Experimental Use Permit Application",
+    label:
+      "Information Required for the EPA Experimental Use Permit Application",
   },
   {
     id: "confidential-statement",
@@ -36,8 +37,7 @@ const externalLinks = {
     "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-E/part-160",
   cfrPart161:
     "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-E/part-161",
-  cdx:
-    "https://www.epa.gov/pesticide-registration/electronic-submissions-pesticide-applications",
+  cdx: "https://www.epa.gov/pesticide-registration/electronic-submissions-pesticide-applications",
   pspUserGuide:
     "https://www.epa.gov/system/files/documents/2021-08/psp-user-guide_opp.pdf",
   blankForms:
@@ -54,8 +54,7 @@ const externalLinks = {
     "https://www.epa.gov/test-guidelines-pesticides-and-toxic-substances/final-test-guidelines-pesticides-and-toxic",
   oecdGuidelines:
     "https://www.oecd.org/en/topics/sub-issues/testing-of-chemicals/test-guidelines.html",
-  pdsl:
-    "https://www.epa.gov/pesticide-registration/pesticide-data-submitters-list-pdsl",
+  pdsl: "https://www.epa.gov/pesticide-registration/pesticide-data-submitters-list-pdsl",
   prn20113:
     "https://www.epa.gov/pesticide-registration/prn-2011-3-standard-format-data-submitted-under-fifra-and-certain-provisions",
   npicStateAgencies: "https://npic.orst.edu/reg/state_agencies.html",
@@ -126,7 +125,7 @@ export default function ExperimentalUse() {
       </div>
 
       {/* background image */}
-      <div className="relative mt-4 h-60 text-white">
+      <div className="relative mt-4 h-50 text-white">
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 z-0 bg-black opacity-65" />
 
@@ -196,8 +195,8 @@ export default function ExperimentalUse() {
                 However, only products with a tolerance or exemption from
                 tolerance may be tested in waters used for irrigation, drinking
                 water supplies, or swimming, or waters that contain or affect
-                any fish, shellfish, or other plants or animals that may be taken
-                for food or feed, including marine waters. See{" "}
+                any fish, shellfish, or other plants or animals that may be
+                taken for food or feed, including marine waters. See{" "}
                 <ExternalLink href={externalLinks.cfr1723}>
                   40 CFR 172.3
                 </ExternalLink>
@@ -286,8 +285,8 @@ export default function ExperimentalUse() {
                     </li>
                     <li className="mt-3">Number of acres in test site</li>
                     <li className="mt-3">
-                      Number of structural sites or number of animals by state to
-                      be included in the testing
+                      Number of structural sites or number of animals by state
+                      to be included in the testing
                     </li>
                     <li className="mt-3">Proposed dates of the testing</li>
                     <li className="mt-3">How the testing will be supervised</li>
@@ -304,8 +303,8 @@ export default function ExperimentalUse() {
                       available
                     </li>
                     <li className="mt-3">
-                      Results of prior testing of the product by the applicant to
-                      determine<sup>1</sup>
+                      Results of prior testing of the product by the applicant
+                      to determine<sup>1</sup>
                       <ol className="mt-3 ml-6 list-decimal">
                         <li>Toxicity and effects in or on target organisms</li>
                         <li className="mt-3">
@@ -338,20 +337,22 @@ export default function ExperimentalUse() {
 
                 <li className="mt-3">
                   Statement explaining whether a tolerance exists or is being
-                  requested, especially if the product is to be tested in a manner
-                  that may result in residues in food or feed, for example fish
-                  moving in and out of the test site. If a tolerance is being
-                  requested, the temporary tolerance petition must be provided
-                  with the EUP application. Whenever all food or feed derived
-                  from the experimental program is to be destroyed or fed to
-                  experimental animals, a statement must be included explaining
-                  this.
+                  requested, especially if the product is to be tested in a
+                  manner that may result in residues in food or feed, for
+                  example fish moving in and out of the test site. If a
+                  tolerance is being requested, the temporary tolerance petition
+                  must be provided with the EUP application. Whenever all food
+                  or feed derived from the experimental program is to be
+                  destroyed or fed to experimental animals, a statement must be
+                  included explaining this.
                 </li>
 
                 <li className="mt-3">
                   Labeling Requirements
                   <ul className="mt-3 ml-6 list-[circle]">
-                    <li>A proposed label must be included in the EUP application</li>
+                    <li>
+                      A proposed label must be included in the EUP application
+                    </li>
                     <li className="mt-3">
                       Prominently states “For Experimental Use Only”
                     </li>
@@ -407,14 +408,16 @@ export default function ExperimentalUse() {
                 <li>
                   A complete confidential statement of formula of the product to
                   be tested that provides a tabulation of the names and
-                  percentage by weight of each ingredient, both active and inert.
+                  percentage by weight of each ingredient, both active and
+                  inert.
                 </li>
 
                 <li className="mt-3">
                   Chemical and physical properties of each active ingredient of
                   the formulation being tested, including the analytical methods
-                  to be used to determine these (40 CFR 158.210, 158.220, 40 CFR 158.310, 40 CFR 158.2081, 40 CFR 158.2171, and 40 CFR 161.150-161.190);
-                 {" "}
+                  to be used to determine these (40 CFR 158.210, 158.220, 40 CFR
+                  158.310, 40 CFR 158.2081, 40 CFR 158.2171, and 40 CFR
+                  161.150-161.190);{" "}
                   <ExternalLink href={externalLinks.cfrPart158}>
                     EPA CFR Part 158: Data Requirements for Pesticides
                   </ExternalLink>
@@ -428,15 +431,18 @@ export default function ExperimentalUse() {
                 <li className="mt-3">
                   Available data on the rate of decline of residues on the
                   treated crop or site, together with other information relevant
-                  to determining when workers can safely re-enter treated areas (40 CFR 158.250, 40 CFR 158.270, 40 CFR 2082, 40 CFR 158.2172, 40 CFR 161.240 and 40 CFR 161.390).
-
+                  to determining when workers can safely re-enter treated areas
+                  (40 CFR 158.250, 40 CFR 158.270, 40 CFR 2082, 40 CFR 158.2172,
+                  40 CFR 161.240 and 40 CFR 161.390).
                 </li>
 
                 <li className="mt-3">
                   Available toxicity and exposure data, including human
                   epidemiological data, relevant to assessing the potential of
                   the product to cause injury to users and other people who may
-                  be exposed (40 CFR 158.230, 40 CFR 158.240, 40 CFR 158.243, 40 158.260, 40 CFR 158.2083, 40 CFR 158.2084, 40 CFR 158.2173, 40 CFR 158.2174 and 40 CFR 161.340).
+                  be exposed (40 CFR 158.230, 40 CFR 158.240, 40 CFR 158.243, 40
+                  158.260, 40 CFR 158.2083, 40 CFR 158.2084, 40 CFR 158.2173, 40
+                  CFR 158.2174 and 40 CFR 161.340).
                 </li>
 
                 <li className="mt-3">
@@ -467,22 +473,21 @@ export default function ExperimentalUse() {
 
               <ul className="mt-5 ml-6 list-disc">
                 <li>
-                  Application for an Experimental Use Permit {" "}
+                  Application for an Experimental Use Permit{" "}
                   <ExternalLink href={externalLinks.form857017}>
-                    (EPA Form
-                    8570-17)
+                    (EPA Form 8570-17)
                   </ExternalLink>
                 </li>
 
                 <li className="mt-3">
-                  Confidential Statement of Formula {" "}
+                  Confidential Statement of Formula{" "}
                   <ExternalLink href={externalLinks.form85704}>
                     (EPA Form 8570-4)
                   </ExternalLink>
                 </li>
 
                 <li className="mt-3">
-                  Data Matrix {" "}
+                  Data Matrix{" "}
                   <ExternalLink href={externalLinks.form857035}>
                     (EPA Form 8570-35)
                   </ExternalLink>
@@ -490,11 +495,15 @@ export default function ExperimentalUse() {
               </ul>
 
               <p className="mt-5">
-                <b>This information was collected from EPA Pesticide Registration
-                Manual: Chapter 12 - Applying for an Experimental Use Permit,
-                unless otherwise specified. For more details, please visit the{" "}
-                <ExternalLink href={externalLinks.eupChapter}>website</ExternalLink>
-                .</b>
+                <b>
+                  This information was collected from EPA Pesticide Registration
+                  Manual: Chapter 12 - Applying for an Experimental Use Permit,
+                  unless otherwise specified. For more details, please visit the{" "}
+                  <ExternalLink href={externalLinks.eupChapter}>
+                    website
+                  </ExternalLink>
+                  .
+                </b>
               </p>
             </div>
           </div>
@@ -587,8 +596,7 @@ export default function ExperimentalUse() {
                 </li>
 
                 <li className="mt-3">
-                  <b>Pesticide Data Submitters List Contact:</b> Brenda
-                  Minnema,{" "}
+                  <b>Pesticide Data Submitters List Contact:</b> Brenda Minnema,{" "}
                   <a
                     className="text-primary text-underline"
                     href="mailto:minnema.brenda@epa.gov"
