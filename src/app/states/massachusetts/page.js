@@ -178,7 +178,7 @@ export default function MassachusettsPage() {
       </div>
 
       {/* background image */}
-      <div className="relative mt-4 h-60 text-white">
+      <div className="relative mt-4 50 text-white">
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 z-0 bg-black opacity-65" />
 
@@ -196,7 +196,9 @@ export default function MassachusettsPage() {
           </a>
 
           <p className="!mt-3 text-lg text-gray-200">
-            <HeaderLink href={externalLinks.epaRegion1}>EPA Region 1</HeaderLink>
+            <HeaderLink href={externalLinks.epaRegion1}>
+              EPA Region 1
+            </HeaderLink>
             ,{" "}
             <HeaderLink href={externalLinks.usaceNorthAtlantic}>
               USACE North Atlantic Division
@@ -241,8 +243,8 @@ export default function MassachusettsPage() {
           >
             <div className="mb-8 text-lg">
               <p>
-                <b>Algaecide Approval Process:</b> Federally approved
-                algaecides must be registered with the{" "}
+                <b>Algaecide Approval Process:</b> Federally approved algaecides
+                must be registered with the{" "}
                 <ExternalLink
                   href={externalLinks.departmentAgriculturalResources}
                 >
@@ -274,8 +276,8 @@ export default function MassachusettsPage() {
                 <ExternalLink href={externalLinks.orderOfConditions}>
                   Order of Conditions
                 </ExternalLink>
-                . This order details the places and circumstances under which the
-                product can be used in accordance with the{" "}
+                . This order details the places and circumstances under which
+                the product can be used in accordance with the{" "}
                 <ExternalLink href={externalLinks.wetlandsProtectionAct}>
                   Wetlands Protection Act
                 </ExternalLink>
@@ -336,10 +338,10 @@ export default function MassachusettsPage() {
                 </ExternalLink>{" "}
                 page shows current advisories, safety information, and HAB
                 educational materials. The department has historic data on algal
-                blooms and associated toxins. DPH does not participate in product
-                regulatory proceedings, but it is advised to contact DPH when
-                planning field trials, as they can assist with site selection and
-                inform on past HAB dynamics.
+                blooms and associated toxins. DPH does not participate in
+                product regulatory proceedings, but it is advised to contact DPH
+                when planning field trials, as they can assist with site
+                selection and inform on past HAB dynamics.
               </p>
 
               <h2 className="mt-8 font-bold text-primary">
@@ -646,18 +648,19 @@ export default function MassachusettsPage() {
                 </li>
 
                 <li className="mt-3">
-                  The MA Department of Public Health (DPH), Bureau of Climate and
-                  Environmental Health issues advisories for state-owned
+                  The MA Department of Public Health (DPH), Bureau of Climate
+                  and Environmental Health issues advisories for state-owned
                   waterbodies. The DPH’s{" "}
                   <ExternalLink href={externalLinks.algaeInformation}>
                     Algae Information
                   </ExternalLink>{" "}
                   page shows current advisories, safety information, and HAB
                   educational materials. The department has historic data on
-                  algal blooms and associated toxins. DPH does not participate in
-                  product regulatory proceedings. However, it is advised to
-                  contact DPH when planning field trials, as they can assist with
-                  site selection and provide information on past HAB dynamics.
+                  algal blooms and associated toxins. DPH does not participate
+                  in product regulatory proceedings. However, it is advised to
+                  contact DPH when planning field trials, as they can assist
+                  with site selection and provide information on past HAB
+                  dynamics.
                 </li>
 
                 <li className="mt-3">

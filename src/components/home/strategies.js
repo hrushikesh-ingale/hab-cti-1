@@ -107,7 +107,7 @@ const tabs = {
     subTabs: {
       devices: {
         label: "Minimum Risk Pesticides",
-        image: "/min-pesticide.png",
+        image: "/minimum.png",
         title: "Minimum Risk Pesticides",
         body: [
           "These are pesticides that meet a series of criteria determining them to pose little to no risk to human health or the environment. These pesticides are exempt from registration and label review under FIFRA.",

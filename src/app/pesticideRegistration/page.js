@@ -36,22 +36,19 @@ const externalLinks = {
     "https://www.epa.gov/pesticide-registration/pesticide-registration-manual-chapter-21-directions-submitting-applications",
   appendixA:
     "https://www.epa.gov/pesticide-registration/pesticide-registration-manual-appendix-guidance-documents",
-  conventional:
-    "https://www.epa.gov/pesticide-registration/conventional-pesticide-registration",
+  conventional: "/conventionalPesticide",
   biopesticides:
     "https://www.epa.gov/pesticide-registration/biopesticide-registration",
   antimicrobial:
     "https://www.epa.gov/pesticide-registration/antimicrobial-pesticide-registration",
-  minimumRisk:
-    "https://www.epa.gov/minimum-risk-pesticides",
+  minimumRisk: "/minimumRiskPesticides",
   physicalDevices:
     "https://www.epa.gov/pesticide-registration/pesticide-devices-guide-consumers",
   consultants:
     "https://www.epa.gov/pesticide-registration/list-pesticide-regulatory-consultants",
   testGuidelines:
     "https://www.epa.gov/test-guidelines-pesticides-and-toxic-substances/final-test-guidelines-pesticides-and-toxic",
-  dataRequirements:
-    "https://www.epa.gov/pesticide-registration/data-requirements-pesticide-registration",
+  dataRequirements: "/researchRequirements",
   existingStudies:
     "https://www.epa.gov/pesticide-registration/pesticide-registration-manual-chapter-10-data-compensation-requirements",
   priaFees:
@@ -80,10 +77,8 @@ const externalLinks = {
     "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-E/part-152/subpart-G/section-152.119",
   cfr157:
     "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-E/part-157",
-  tolerances:
-    "https://www.epa.gov/pesticide-tolerances",
-  oecd:
-    "https://www.oecd.org/en/topics/sub-issues/testing-of-chemicals/test-guidelines.html",
+  tolerances: "https://www.epa.gov/pesticide-tolerances",
+  oecd: "https://www.oecd.org/en/topics/sub-issues/testing-of-chemicals/test-guidelines.html",
   npicStateAgencies: "https://npic.orst.edu/reg/state_agencies.html",
   oecdPhysicalChemical:
     "https://www.oecd-ilibrary.org/environment/oecd-guidelines-for-the-testing-of-chemicals-section-1-physical-chemical-properties_20745753",
@@ -220,7 +215,9 @@ function ContactTable({ rows }) {
         <thead>
           <tr className="bg-gray-300">
             <th className="border border-gray-500 px-3 py-2 font-bold">Name</th>
-            <th className="border border-gray-500 px-3 py-2 font-bold">Email</th>
+            <th className="border border-gray-500 px-3 py-2 font-bold">
+              Email
+            </th>
             <th className="border border-gray-500 px-3 py-2 font-bold">
               Area of Responsibility
             </th>
@@ -279,7 +276,8 @@ function DataSpecsTable() {
     {
       category: (
         <>
-          Data from studies to determine hazards to humans and domestic animals (
+          Data from studies to determine hazards to humans and domestic animals
+          (
           <ExternalLink href={externalLinks.series870}>Series 870</ExternalLink>
           )
         </>
@@ -572,9 +570,12 @@ export default function PesticideRegistration() {
                 Under FIFRA, EPA regulates all pesticides that are sold or
                 distributed in the United States. There are three major types of
                 pesticides:{" "}
-                <ExternalLink href={externalLinks.conventional}>
+                <Link
+                  href={externalLinks.conventional}
+                  className="text-primary text-underline"
+                >
                   conventional
-                </ExternalLink>
+                </Link>
                 ,{" "}
                 <ExternalLink href={externalLinks.antimicrobial}>
                   antimicrobial
@@ -589,22 +590,26 @@ export default function PesticideRegistration() {
                   physical device
                 </ExternalLink>
                 , living plant, or{" "}
-                <ExternalLink href={externalLinks.minimumRisk}>
+                <Link
+                  href={externalLinks.minimumRisk}
+                  className="text-primary text-underline"
+                >
                   minimum risk
-                </ExternalLink>
+                </Link>
                 , it may not require FIFRA approval.
               </p>
 
               <p className="mt-5">
                 Before a pesticide product can be lawfully sold or distributed,
                 EPA conducts a comprehensive scientific assessment, resulting in
-                a regulatory decision, meaning whether to approve the product for
-                sale and/or distribution in the United States. The EPA&apos;s
-                scientific assessment relies on data submitted by the pesticide
-                registrant. Therefore, each product must be rigorously tested for
-                its impact on non-target organisms, humans, and the environment.
-                This page provides an overview of the FIFRA pesticide
-                registration process. Detailed information is available in the{" "}
+                a regulatory decision, meaning whether to approve the product
+                for sale and/or distribution in the United States. The
+                EPA&apos;s scientific assessment relies on data submitted by the
+                pesticide registrant. Therefore, each product must be rigorously
+                tested for its impact on non-target organisms, humans, and the
+                environment. This page provides an overview of the FIFRA
+                pesticide registration process. Detailed information is
+                available in the{" "}
                 <ExternalLink href={externalLinks.registrationManual}>
                   Pesticide Registration Manual
                 </ExternalLink>
@@ -646,9 +651,12 @@ export default function PesticideRegistration() {
                   <p>
                     Determine the data needed to submit your product for
                     registration.{" "}
-                    <ExternalLink href={externalLinks.dataRequirements}>
+                    <Link
+                      href={externalLinks.dataRequirements}
+                      className="text-primary text-underline"
+                    >
                       Data requirements
-                    </ExternalLink>{" "}
+                    </Link>{" "}
                     include:
                   </p>
 
@@ -723,7 +731,8 @@ export default function PesticideRegistration() {
                         <li>
                           If citing another company&apos;s data, you must first
                           determine whether you need to pay or get authorization
-                          from the data owner to use it. More can be found in the{" "}
+                          from the data owner to use it. More can be found in
+                          the{" "}
                           <ExternalLink href={externalLinks.chapter10}>
                             Pesticide Registration Manual: Ch. 10 - Data
                             Compensation Requirements
@@ -1001,8 +1010,8 @@ export default function PesticideRegistration() {
                 Each required data category has an accompanying series of
                 necessary tests. The various series identify and detail the data
                 required for registration, as well as the test methodology.
-                Additional EPA-accepted standardized test methods can be found on
-                the OECD webpage. See the table below for the EPA series and
+                Additional EPA-accepted standardized test methods can be found
+                on the OECD webpage. See the table below for the EPA series and
                 corresponding OECD test methods.
               </p>
 
@@ -1013,11 +1022,11 @@ export default function PesticideRegistration() {
                 require field trials. Unregistered pesticides may be applicable
                 for an Experimental Use Permit (EUP). Although the complete set
                 of registration data may not be available at the time of an EUP
-                request, most studies and resulting data must have been collected
-                before the EPA will grant an EUP. An EUP must also be approved
-                by the state in which the experimental use is to take place. To
-                determine the policy of an individual state, use the external
-                link to the{" "}
+                request, most studies and resulting data must have been
+                collected before the EPA will grant an EUP. An EUP must also be
+                approved by the state in which the experimental use is to take
+                place. To determine the policy of an individual state, use the
+                external link to the{" "}
                 <ExternalLink href={externalLinks.npicStateAgencies}>
                   National Pesticide Information Center
                 </ExternalLink>{" "}

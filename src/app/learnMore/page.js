@@ -52,7 +52,7 @@ export default function LearnMore() {
       </div>
 
       {/* Header */}
-      <div className="relative mt-4 h-60 text-white">
+      <div className="relative mt-4 h-50 text-white">
         <div className="absolute inset-0 bg-cover bg-center" />
         <div className="absolute inset-0 z-0 bg-black opacity-65" />
 
