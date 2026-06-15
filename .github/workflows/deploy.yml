@@ -1,0 +1,23 @@
+name: Deploy Next.js to Bluehost
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into Bluehost and Update
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd htdocs/habctrl.info
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart habctrl-frontend
