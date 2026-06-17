@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import https from 'https';
 // 1. Force the Node process to bypass the self-signed certificate check globally
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -52,32 +52,54 @@ const GET_ABOUT_PAGE_DATA = `
   }
 `;
 
+function nativeGraphqlFetch(options, queryData) {
+  return new Promise((resolve, reject) => {
+    const postData = JSON.stringify({ query: queryData });
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          try {
+            resolve(JSON.parse(data));
+          } catch (e) {
+            reject(new Error("Malformed JSON response from CMS"));
+          }
+        } else {
+          reject(new Error(`HTTP status error: ${res.statusCode}`));
+        }
+      });
+    });
+
+    req.on('error', (err) => { reject(err); });
+    req.write(postData);
+    req.end();
+  });
+}
+
 async function getAboutData() {
   try {
     const isDev = process.env.NODE_ENV === 'development';
-    
-    // Always fetch from the domain locally, but route directly to the IP on the live machine
-    const apiUrl = isDev 
-      ? 'https://cms.habctrl.info/graphql' 
-      : 'https://129.121.84.126/graphql';
 
-    const res = await fetch(apiUrl, {
+    const requestOptions = {
       method: 'POST',
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
-        // Map the Host header so CloudPanel's Nginx routing handles the SSL handshakes on prod
-        'Host': 'cms.habctrl.info'
       },
-      body: JSON.stringify({ query: GET_ABOUT_PAGE_DATA }),
-      cache: 'no-store' 
-    });
+      // Bypasses Next's fetch restrictions to force clean routing past the domain lock
+      rejectUnauthorized: false, 
+      
+      // IF local dev, resolve natively via hosts file. 
+      // IF production, punch straight through to the IP but force the correct SNI mapping!
+      hostname: isDev ? 'cms.habctrl.info' : '129.121.84.126',
+      port: 443,
+      path: '/graphql',
+      servername: 'cms.habctrl.info' // <-- CRITICAL: Forces CloudPanel to match your site block
+    };
 
-    if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
-
-    const { data } = await res.json();
-    return data;
+    const response = await nativeGraphqlFetch(requestOptions, GET_ABOUT_PAGE_DATA);
+    return response?.data || null;
   } catch (error) {
     console.error("CMS connection offline. Dropping down to hardcoded defaults.", error);
     return null;
@@ -117,7 +139,7 @@ export default async function About() {
         </div>
 
         <div className="bg-red-600 text-white font-mono text-xs px-3 py-1 rounded-full animate-pulse uppercase tracking-widest font-bold shadow-md">
-          CMS-TEST DEPLOYED 2.0
+          CMS-TEST DEPLOYED 3.0
         </div>
       </div>
 
