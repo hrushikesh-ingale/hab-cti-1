@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import https from 'https';
 // 1. Force the Node process to bypass the self-signed certificate check globally
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const GET_ABOUT_PAGE_DATA = `
   query TestAboutData {
@@ -80,7 +80,7 @@ function nativeGraphqlFetch(options, queryData) {
 
 async function getAboutData() {
   try {
-    const isDev = process.env.NODE_ENV === 'development';
+    // const isDev = process.env.NODE_ENV === 'development';
 
     const requestOptions = {
       method: 'POST',
@@ -92,7 +92,7 @@ async function getAboutData() {
       
       // IF local dev, resolve natively via hosts file. 
       // IF production, punch straight through to the IP but force the correct SNI mapping!
-      hostname: isDev ? 'cms.habctrl.info' : '129.121.84.126',
+      hostname: 'cms.habctrl.info',
       port: 443,
       path: '/graphql',
       servername: 'cms.habctrl.info' // <-- CRITICAL: Forces CloudPanel to match your site block
@@ -139,7 +139,7 @@ export default async function About() {
         </div>
 
         <div className="bg-red-600 text-white font-mono text-xs px-3 py-1 rounded-full animate-pulse uppercase tracking-widest font-bold shadow-md">
-          CMS-TEST DEPLOYED 3.0
+          CMS-TEST DEPLOYED 3.1
         </div>
       </div>
 
