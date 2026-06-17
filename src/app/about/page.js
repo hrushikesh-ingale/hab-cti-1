@@ -1,6 +1,10 @@
 import Image from 'next/image';
 
-// The exact working GraphQL query from your successful IDE test
+// 1. Force the local Node process to bypass self-signed SSL check
+// if (process.env.NODE_ENV === 'development') {
+//   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// }
+
 const GET_ABOUT_PAGE_DATA = `
   query TestAboutData {
     page(id: "about", idType: URI) {
@@ -52,16 +56,32 @@ const GET_ABOUT_PAGE_DATA = `
 
 async function getAboutData() {
   try {
-    const res = await fetch('http://cms.habctrl.info/graphql', {
+    // Detect if the code is running on your machine (development) or the live server (production)
+    const isDev = process.env.NODE_ENV === 'development';
+    
+    // If local dev, use the domain bypass. If live server, hit the raw IP directly over HTTPS!
+    const apiUrl = isDev 
+      ? 'https://cms.habctrl.info/graphql' 
+      : 'https://129.121.84.126/graphql';
+
+    const res = await fetch(apiUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({ query: GET_ABOUT_PAGE_DATA }),
-      next: { revalidate: 60 }, // Cache data for 1 minute
+      // Keep 'no-store' during testing, switch to { revalidate: 60 } later for speed optimization
+      cache: 'no-store' 
     });
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
     const { data } = await res.json();
     return data;
   } catch (error) {
-    console.error("CMS connection offline. Dropping down to hardcoded default strings.", error);
+    console.error("CMS connection offline. Dropping down to hardcoded defaults.", error);
     return null;
   }
 }
@@ -69,7 +89,7 @@ async function getAboutData() {
 export default async function About() {
   const data = await getAboutData();
   
-  // Extracting endpoints safely with complete string fallbacks
+  // Safe extraction fallbacks
   const fields = data?.page?.aboutPageFields || {};
   const partnerNodes = data?.partners?.nodes || [];
   const teamNodes = data?.teamMembers?.nodes || [];
@@ -77,15 +97,15 @@ export default async function About() {
   const heroBg = fields.heroBackgroundImage?.node?.sourceUrl || '/aboutHero.png';
   const subtitle1 = fields.heroSubtitle1 || 'US Harmful Algal Bloom - Control';
   const subtitle2 = fields.heroSubtitle2 || 'Technologies & Regulatory Logistics';
-  const intro1 = fields.introductionParagraph1 || 'The United States HAB Control Technologies & Regulatory Logistics (US HAB CTRL) streamlines the vetting process...';
-  const intro2 = fields.introductionParagraph2 || 'We accelerate the development and assessment of strategies that eliminate or reduce harmful algae...';
-  const mission = fields.missionStatement || 'Our mission is to advance the development and use of effective, science-based technologies...';
+  const intro1 = fields.introductionParagraph1;
+  // || 'The United States HAB Control Technologies & Regulatory Logistics (US HAB CTRL) streamlines the vetting process for novel harmful algal bloom (HAB) control technologies. Our goal is to help the research community and funding agencies to identify and advance solutions that are feasible, environmentally acceptable, scalable, and cost-effective for controlling the impacts of both freshwater and marine HABS.';
+  const intro2 = fields.introductionParagraph2 || 'We accelerate the development and assessment of strategies that eliminate or reduce harmful algae and their toxins through biological, chemical, or physical means. Our work is guided by an Advisory and Review Board with representatives from the U.S. Army Corps of Engineers, Environmental Protection Agency (EPA), U.S. Geological Survey (USGS), National Oceanic and Atmospheric Administration (NOAA), state agencies, academic institutions, non-governmental organizations, and industry.';
+  const mission = fields.missionStatement || 'Our mission is to advance the development and use of effective, science-based technologies that control or reduce HABs and their toxins. We aim to expand the range of proven control options available and to simplify the licensing and permitting processes required for their deployment. By doing so, we support a more effective and coordinated national response of the growing challenge of HABs.';
   const contactEmail = fields.email || 'USHABCTI@umces.edu';
-  const fundingHtml = fields.fundingText || 'The U.S. Harmful Algal Bloom-Control Tecnologies Incubator is supported by funding from <b>NOAA\'s National Centres for Coastal Ocean Science (NCCOS)</b>';
+  const fundingHtml = fields.fundingText || 'The U.S. Harmful Algal Bloom-Control Tecnologies Incubator is supported by funding from <b>NOAA\'s National Centres for Coastal Ocean Science (NCCOS)</b> (NA22NOS4780172)';
 
   return (
     <div className="tracking-wide px-20">
-      {/* Navigation Return Hook & Deployment Badge */}
       <div className="flex flex-row justify-between items-center mt-5">
         <div className="flex flex-row items-center hover:scale-105 transition-all duration-300 cursor-pointer w-fit">
           <svg className="usa-icon text-gray-500" aria-hidden="true" focusable="false" role="img">
@@ -97,13 +117,11 @@ export default async function About() {
           </a>
         </div>
 
-        {/* CMS-TEST DEPLOYMENT HEADER BADGE */}
         <div className="bg-red-600 text-white font-mono text-xs px-3 py-1 rounded-full animate-pulse uppercase tracking-widest font-bold shadow-md">
           CMS-TEST DEPLOYED
         </div>
       </div>
 
-      {/* Dynamic Hero Section */}
       <div className="relative text-white mt-4 overflow-hidden h-75 rounded-lg">
         <div
           className="absolute inset-0 bg-cover bg-center kenburns-loop"
@@ -117,18 +135,15 @@ export default async function About() {
         </div>
       </div>
 
-      {/* Core Copy */}
       <div className="py-20 text-lg tracking-wide font-light">
         <p>{intro1}</p>
         <p className="mt-6">{intro2}</p>
 
-        {/* Dynamic Mission Layout */}
         <div className="flex flex-row gap-50 mt-18">
           <h1 className="font-bold text-2xl whitespace-nowrap">Our Mission</h1>
           <p>{mission}</p>
         </div>
 
-        {/* Dynamic Partners Loop */}
         <div className="flex flex-row gap-50 mt-15">
           <h1 className="font-bold text-2xl whitespace-nowrap">Our Partners</h1>
           <div className="flex flex-row gap-10">
@@ -150,7 +165,6 @@ export default async function About() {
         </div>
       </div>
 
-      {/* Dynamic Team Grid */}
       <div className="py-4 text-lg">
         <p className="font-bold !text-4xl">The Team</p>
         <div className="flex flex-row mt-8 gap-8">
@@ -172,7 +186,6 @@ export default async function About() {
           ))}
         </div>
 
-        {/* Contact Footer Section */}
         <div className="flex flex-col gap-8 mt-5">
           <div className="flex flex-row items-start gap-30">
             <h1 className="text-2xl font-bold whitespace-nowrap">Contact Us</h1>
@@ -183,11 +196,10 @@ export default async function About() {
             </div>
           </div>
 
-          {/* Funding Field */}
           <div className="flex flex-row items-start gap-30">
             <h1 className="text-2xl font-bold whitespace-nowrap">Funding</h1>
             <div>
-              <p 
+              <div 
                 className="mt-5 ml-12" 
                 dangerouslySetInnerHTML={{ __html: fundingHtml }}
               />
