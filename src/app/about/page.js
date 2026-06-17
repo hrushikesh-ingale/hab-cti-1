@@ -1,9 +1,7 @@
 import Image from 'next/image';
 
-// 1. Force the local Node process to bypass self-signed SSL check
-// if (process.env.NODE_ENV === 'development') {
-//   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-// }
+// 1. Force the Node process to bypass the self-signed certificate check globally
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const GET_ABOUT_PAGE_DATA = `
   query TestAboutData {
@@ -56,10 +54,9 @@ const GET_ABOUT_PAGE_DATA = `
 
 async function getAboutData() {
   try {
-    // Detect if the code is running on your machine (development) or the live server (production)
     const isDev = process.env.NODE_ENV === 'development';
     
-    // If local dev, use the domain bypass. If live server, hit the raw IP directly over HTTPS!
+    // Always fetch from the domain locally, but route directly to the IP on the live machine
     const apiUrl = isDev 
       ? 'https://cms.habctrl.info/graphql' 
       : 'https://129.121.84.126/graphql';
@@ -67,10 +64,11 @@ async function getAboutData() {
     const res = await fetch(apiUrl, {
       method: 'POST',
       headers: { 
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        // Map the Host header so CloudPanel's Nginx routing handles the SSL handshakes on prod
+        'Host': 'cms.habctrl.info'
       },
       body: JSON.stringify({ query: GET_ABOUT_PAGE_DATA }),
-      // Keep 'no-store' during testing, switch to { revalidate: 60 } later for speed optimization
       cache: 'no-store' 
     });
 
@@ -97,8 +95,9 @@ export default async function About() {
   const heroBg = fields.heroBackgroundImage?.node?.sourceUrl || '/aboutHero.png';
   const subtitle1 = fields.heroSubtitle1 || 'US Harmful Algal Bloom - Control';
   const subtitle2 = fields.heroSubtitle2 || 'Technologies & Regulatory Logistics';
-  const intro1 = fields.introductionParagraph1;
-  // || 'The United States HAB Control Technologies & Regulatory Logistics (US HAB CTRL) streamlines the vetting process for novel harmful algal bloom (HAB) control technologies. Our goal is to help the research community and funding agencies to identify and advance solutions that are feasible, environmentally acceptable, scalable, and cost-effective for controlling the impacts of both freshwater and marine HABS.';
+  
+  // Clean fallbacks restored safely
+  const intro1 = fields.introductionParagraph1 || 'The United States HAB Control Technologies & Regulatory Logistics (US HAB CTRL) streamlines the vetting process for novel harmful algal bloom (HAB) control technologies. Our goal is to help the research community and funding agencies to identify and advance solutions that are feasible, environmentally acceptable, scalable, and cost-effective for controlling the impacts of both freshwater and marine HABS.';
   const intro2 = fields.introductionParagraph2 || 'We accelerate the development and assessment of strategies that eliminate or reduce harmful algae and their toxins through biological, chemical, or physical means. Our work is guided by an Advisory and Review Board with representatives from the U.S. Army Corps of Engineers, Environmental Protection Agency (EPA), U.S. Geological Survey (USGS), National Oceanic and Atmospheric Administration (NOAA), state agencies, academic institutions, non-governmental organizations, and industry.';
   const mission = fields.missionStatement || 'Our mission is to advance the development and use of effective, science-based technologies that control or reduce HABs and their toxins. We aim to expand the range of proven control options available and to simplify the licensing and permitting processes required for their deployment. By doing so, we support a more effective and coordinated national response of the growing challenge of HABs.';
   const contactEmail = fields.email || 'USHABCTI@umces.edu';
@@ -199,6 +198,7 @@ export default async function About() {
           <div className="flex flex-row items-start gap-30">
             <h1 className="text-2xl font-bold whitespace-nowrap">Funding</h1>
             <div>
+              {/* Confirmed clean hydration layout div wrapper */}
               <div 
                 className="mt-5 ml-12" 
                 dangerouslySetInnerHTML={{ __html: fundingHtml }}
