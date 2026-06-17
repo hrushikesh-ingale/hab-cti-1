@@ -117,7 +117,7 @@ export default async function About() {
         </div>
 
         <div className="bg-red-600 text-white font-mono text-xs px-3 py-1 rounded-full animate-pulse uppercase tracking-widest font-bold shadow-md">
-          CMS-TEST DEPLOYED
+          CMS-TEST DEPLOYED 2.0
         </div>
       </div>
 
