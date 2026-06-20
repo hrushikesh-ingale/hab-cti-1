@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import InternalPageHero from "@/components/InternalPageHero";
 
 const sections = [
   { id: "overview", label: "Overview" },
@@ -509,32 +510,16 @@ export default function PesticideRegistration() {
         <span className="text-gray-800">Pesticide Registration</span>
       </div>
 
-      {/* background image */}
-      <div className="relative mt-4 h-60 text-white">
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 z-0 bg-black opacity-65" />
 
-        {/* Content */}
-        <div className="relative z-10 mt-5 px-1 py-16 text-center duration-300 hover:scale-105">
-          <a
-            href={externalLinks.pesticideRegistration}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white no-underline hover:no-underline"
-          >
-            <h1 className="!mb-0 !mt-1 !text-4xl font-bold text-white">
-              Pesticide Registration
-            </h1>
-          </a>
-
-          <p className="!mt-3 text-lg text-gray-200">
-            FIFRA pesticide product registration
-          </p>
-        </div>
-      </div>
+      {/* Page Hero Title */}
+      <InternalPageHero
+        title="Pesticide Registration"
+        subtitle="FIFRA pesticide product registration"
+        link={externalLinks.pesticideRegistration}
+      />
 
       {/* scroll left side */}
-      <div className="mt-10 flex flex-row gap-10">
+      <div className="mt-0 flex flex-row gap-10">
         <div className="mt-10 w-56 shrink-0">
           <div className="sticky top-8">
             <p className="mb-3 font-bold text-black">On this page</p>

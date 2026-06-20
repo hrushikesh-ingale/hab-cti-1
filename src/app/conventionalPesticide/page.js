@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import InternalPageHero from "@/components/InternalPageHero";
 
 const sections = [
   { id: "overview", label: "Overview" },
@@ -1510,29 +1511,15 @@ export default function ConventionalPesticide() {
         </span>
       </div>
 
-      {/* Hero */}
-      <div className="relative mt-4 h-50 text-white">
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 z-0 bg-black opacity-65" />
-        <div className="relative z-10 mt-5 px-1 py-16 text-center duration-300 hover:scale-105">
-          <a
-            href={externalLinks.conventionalEPA}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white no-underline hover:no-underline"
-          >
-            <h1 className="!mb-0 !mt-1 !text-4xl font-bold text-white">
-              Conventional Pesticide Registration
-            </h1>
-          </a>
-          <p className="!mt-3 text-lg text-gray-200">
-            FIFRA product registration — Conventional Pesticides
-          </p>
-        </div>
-      </div>
+      {/* Page Hero Title */}
+      <InternalPageHero
+        title="Conventional Pesticide Registration"
+        subtitle="FIFRA product registration — Conventional Pesticides"
+        link={externalLinks.conventionalEPA}
+      />
 
       {/* Body */}
-      <div className="mt-10 flex flex-row gap-10">
+      <div className="mt-0 flex flex-row gap-10">
         {/* Sticky nav */}
         <div className="mt-10 w-56 shrink-0">
           <div className="sticky top-8">
@@ -1542,11 +1529,10 @@ export default function ConventionalPesticide() {
                 <p
                   key={section.id}
                   onClick={() => scrollTo(section.id)}
-                  className={`cursor-pointer py-2 pl-4 text-sm transition-colors duration-200 hover:text-primary ${
-                    activeSection === section.id
+                  className={`cursor-pointer py-2 pl-4 text-sm transition-colors duration-200 hover:text-primary ${activeSection === section.id
                       ? "-ml-[2px] border-l-4 border-black font-semibold text-black"
                       : "text-primary"
-                  }`}
+                    }`}
                 >
                   {section.label}
                 </p>
