@@ -80,28 +80,24 @@ function nativeGraphqlFetch(options, queryData) {
 
 async function getAboutData() {
   try {
-    // const isDev = process.env.NODE_ENV === 'development';
-
-    const requestOptions = {
+    // Standard fetch hitting your beautiful new, secure domain!
+    const res = await fetch('https://cms.habctrl.info/graphql', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+      headers: { 
+        'Content-Type': 'application/json'
       },
-      // Bypasses Next's fetch restrictions to force clean routing past the domain lock
-      rejectUnauthorized: false, 
-      
-      // IF local dev, resolve natively via hosts file. 
-      // IF production, punch straight through to the IP but force the correct SNI mapping!
-      hostname: 'cms.habctrl.info',
-      port: 443,
-      path: '/graphql',
-      servername: 'cms.habctrl.info' // <-- CRITICAL: Forces CloudPanel to match your site block
-    };
+      body: JSON.stringify({ query: GET_ABOUT_PAGE_DATA }),
+      cache: 'no-store' 
+    });
 
-    const response = await nativeGraphqlFetch(requestOptions, GET_ABOUT_PAGE_DATA);
-    return response?.data || null;
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const { data } = await res.json();
+    return data;
   } catch (error) {
-    console.error("CMS connection offline. Dropping down to hardcoded defaults.", error);
+    console.error("CMS connection error:", error);
     return null;
   }
 }
@@ -139,7 +135,7 @@ export default async function About() {
         </div>
 
         <div className="bg-red-600 text-white font-mono text-xs px-3 py-1 rounded-full animate-pulse uppercase tracking-widest font-bold shadow-md">
-          CMS-TEST DEPLOYED 3.1
+          CMS-TEST DEPLOYED 3.2
         </div>
       </div>
 
