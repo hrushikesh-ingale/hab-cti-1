@@ -22,7 +22,7 @@ const tabs = {
         image: "/biochemical.png",
         title: "Biochemical Pesticides",
         body: [
-          "Biochemical Pesticides are substances that: (1) are naturally occuring chemicals or are synthetically dervived equivalents; (2) have a history of exposure to humans and the environment demonstrating minimal toxicity, or in the case of a synthetically-derived biochemical pesticides, are equivalent to a naturally occuring chemical that have such a history; and (3) have a nontoxic mode of action to the target pest(s). Biochemical pesticides include substances, such as insect sex pheromones, which interfere with mating, as well as various scented plant extracts that attract insect pests to traps. Because it is sometimes difficult to determine whether a substance meets the criteria for classification as a biochemical pesticide, EPA has established the Biochemical Classification Committee to make such decisions.",
+          "Biochemical Pesticides are substances that- (1) are naturally occuring chemicals or are synthetically dervived equivalents; (2) have a history of exposure to humans and the environment demonstrating minimal toxicity, or in the case of a synthetically-derived biochemical pesticides, are equivalent to a naturally occuring chemical that have such a history; and (3) have a nontoxic mode of action to the target pest(s). Biochemical pesticides include substances, such as insect sex pheromones, which interfere with mating, as well as various scented plant extracts that attract insect pests to traps. Because it is sometimes difficult to determine whether a substance meets the criteria for classification as a biochemical pesticide, EPA has established the Biochemical Classification Committee to make such decisions.",
         ],
       },
       antimicrobial: {
@@ -80,8 +80,13 @@ const tabs = {
         label: "Biopesticides",
         image: "/biopesticides.png",
         title: "Biopesticides",
+        learnMoreLink: "/biopesticideRegistration",
         body: [
           "The EPA classifies Biopesticides as those derived from natural materials such as animals, plants, bacteria, and certain minerals. For example, canola oil and baking soda have pesticidal applications and are considered biopesticides.",
+          "There are three major categories of biopesticide.",
+          "1. Biochemical Pesticides: Naturally occurring, non-toxic substances that control pests without directly killing them (unlike synthetic conventional pesticides). Examples include insect sex pheromones that disrupt mating and scented plant extracts used as trap attractants. The EPA uses a special committee to officially classify these.",
+          "2. Microbial Pesticides: Products containing microorganisms (bacteria, fungi, viruses, or protozoa) as the active ingredient. They are highly pest-specific; for instance, different strains of Bacillus thuringiensis (Bt) produce distinct proteins that target and starve specific insect larvae (like mosquitoes or moths) by binding to their gut receptors.",
+          "3. Plant-Incorporated-Protectants (PIPs): Pesticidal substances produced naturally by plants that have been genetically modified. For example, scientists can insert the gene for the Bt protein directly into a plant's DNA, causing the plant itself to manufacture the pest-destroying substance. The EPA regulates the genetic material and the protein, but not the plant itself."
         ],
       },
     },
@@ -187,11 +192,25 @@ export default function Strategies() {
             <div className="flex flex-col justify-between min-h-52">
               <div>
                 <h1 className="font-bold">{currentContent.title}</h1>
-                {currentContent.body.map((paragraph, i) => (
-                  <p key={i} className={`font-light ${i > 0 ? "mt-5" : ""}`}>
-                    {paragraph}
-                  </p>
-                ))}
+                <div className="max-h-34 overflow-y-auto pr-1">
+                  {currentContent.body.map((paragraph, i) => {
+                    const colonIndex = paragraph.indexOf(":");
+                    return (
+                      <p key={i} className={`font-light ${i > 0 ? "mt-5" : ""}`}>
+                        {colonIndex !== -1 ? (
+                          <>
+                            <span className="font-bold">
+                              {paragraph.slice(0, colonIndex + 1)}
+                            </span>
+                            {paragraph.slice(colonIndex + 1)}
+                          </>
+                        ) : (
+                          paragraph
+                        )}
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
               <a href={currentContent.learnMoreLink || "/learnMore"}>
                 <button className="usa-button bg-primary !mt-5 w-fit self-start">
@@ -210,6 +229,6 @@ export default function Strategies() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

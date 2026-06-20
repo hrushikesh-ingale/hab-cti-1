@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import InternalPageHero from "@/components/InternalPageHero";
 
 export default function Mprsa() {
   const [activeSection, setActiveSection] = useState("background");
@@ -54,29 +55,14 @@ export default function Mprsa() {
         <span className="text-gray-800">MPRSA</span>
       </div>
 
-      {/* background image */}
-      <div className="relative text-white mt-4 h-50">
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black opacity-65 z-0" />
-        {/* Content */}
-        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
-          <a
-            href="https://www.epa.gov/marine-protection-permitting"
-            target="_blank"
-          >
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
-              Marine Protection, Research and
-            </h1>
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1">
-              Sanctuaries Act (MPRSA)
-            </h1>
-          </a>
-          <p className="text-lg !mt-3 text-gray-200">MPRSA Overview</p>
-        </div>
-      </div>
-
+      {/* Page Hero Title */}
+      <InternalPageHero
+        title="Marine Protection, Research and Sanctuaries Act (MPRSA)"
+        subtitle="MPRSA Overview"
+        link="https://www.epa.gov/marine-protection-permitting"
+      />
       {/* scroll left side */}
-      <div className="flex flex-row gap-10 mt-10">
+      <div className="flex flex-row gap-10 mt-0">
         <div className="w-56 shrink-0 mt-10">
           <div className="sticky top-8">
             <p className="font-bold text-black mb-3">On this page</p>

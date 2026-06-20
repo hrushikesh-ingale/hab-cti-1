@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import InternalPageHero from "@/components/InternalPageHero";
 
 export default function Fifra() {
   const [activeSection, setActiveSection] = useState("background");
@@ -54,29 +55,15 @@ export default function Fifra() {
         <span className="text-gray-800">FIFRA</span>
       </div>
 
-      {/* background image */}
-      <div className="relative text-white mt-4 h-50">
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black opacity-65 z-0" />
-        {/* Content */}
-        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
-          <a
-            href="https://www.epa.gov/laws-regulations/summary-federal-insecticide-fungicide-and-rodenticide-act"
-            target="_blank"
-          >
-            <h1 className="!text-3xl font-bold !mb-0 !mt-1">
-              Federal Insecticide, Fungicide, and
-            </h1>
-            <h1 className="!text-3xl font-bold !mb-0 !mt-1">
-              Rodenticide Act (FIFRA)
-            </h1>
-          </a>
-          <p className="text-lg !mt-3 text-gray-200">Overview</p>
-        </div>
-      </div>
+      {/* Page Hero Title */}
+      <InternalPageHero
+        title="Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA)"
+        subtitle="Overview"
+        link="https://www.epa.gov/laws-regulations/summary-federal-insecticide-fungicide-and-rodenticide-act"
+      />
 
       {/* scroll left side */}
-      <div className="flex flex-row gap-10 mt-10">
+      <div className="flex flex-row gap-10 mt-0">
         <div className="w-56 shrink-0 mt-10">
           <div className="sticky top-8">
             <p className="font-bold text-black mb-3">On this page</p>
@@ -85,11 +72,10 @@ export default function Fifra() {
                 <p
                   key={section.id}
                   onClick={() => scrollTo(section.id)}
-                  className={`pl-4 py-2 text-sm cursor-pointer transition-colors duration-200 hover:text-primary ${
-                    activeSection === section.id
+                  className={`pl-4 py-2 text-sm cursor-pointer transition-colors duration-200 hover:text-primary ${activeSection === section.id
                       ? "text-black font-semibold border-l-4 border-black -ml-[2px]"
                       : "text-primary"
-                  }`}
+                    }`}
                 >
                   {section.label}
                 </p>

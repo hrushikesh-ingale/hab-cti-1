@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import InternalPageHero from "@/components/InternalPageHero";
+
 
 const sections = [
   { id: "overview", label: "Overview" },
@@ -1560,31 +1562,15 @@ export default function ResearchRequirements() {
         </span>
       </div>
 
-      {/* background image */}
-      <div className="relative text-white mt-4 h-50">
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black opacity-65 z-0" />
-
-        {/* Content */}
-        <div className="relative z-10 py-16 px-1 text-center mt-5 hover:scale-105 duration-300">
-          <a
-            href={externalLinks.epaDataRequirements}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white no-underline hover:no-underline"
-          >
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
-              Pesticide Registration Research
-            </h1>
-            <h1 className="!text-4xl font-bold !mb-0 !mt-1 text-white">
-              Data Requirements
-            </h1>
-          </a>
-        </div>
-      </div>
+      {/* Page Hero Title */}
+      <InternalPageHero
+        title="Pesticide Registration Research"
+        subtitle="Data Requirements"
+        link={externalLinks.epaDataRequirements}
+      />
 
       {/* scroll left side */}
-      <div className="mt-10 flex flex-row gap-10">
+      <div className="mt-0 flex flex-row gap-10">
         <div className="mt-10 w-56 shrink-0">
           <div className="sticky top-8">
             <p className="mb-3 font-bold text-black">On this page</p>
@@ -1594,11 +1580,10 @@ export default function ResearchRequirements() {
                   type="button"
                   key={section.id}
                   onClick={() => scrollTo(section.id)}
-                  className={`py-2 pl-4 text-left text-sm transition-colors duration-200 hover:text-primary ${
-                    activeSection === section.id
+                  className={`py-2 pl-4 text-left text-sm transition-colors duration-200 hover:text-primary ${activeSection === section.id
                       ? "-ml-[2px] border-l-4 border-black font-semibold text-black"
                       : "text-primary"
-                  }`}
+                    }`}
                 >
                   {section.label}
                 </button>
