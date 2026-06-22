@@ -1,79 +1,117 @@
+"use client";
 import Link from "next/link";
 
-const lawsAndPermits = [
-  {
-    title: "Research Requirements",
-    description: "Data Requirements for EPA Registration",
-    href: "/researchRequirements",
-    icon: "star",
-  },
-  {
-    title: "Field Studies",
-    description: "Experimental Use Permits",
-    href: "/experimentalUse",
-    icon: "construction_worker",
-  },
-  {
-    title: "External Resources",
-    description: "Learn More!",
-    href: "/externalResources",
-    icon: "link",
-  },
-  {
-    title: "Getting an Approval",
-    description: "Permits & Regulations",
-    href: "/gettingApproval",
-    icon: "thumb_up_alt",
-  },
-  {
-    title: "Regulatory Agencies",
-    description: "Federal & State Regulations",
-    href: "/regulationsDirectory",
-    icon: "topic",
-  },
-];
+export default function Navigation({ cms }) {
+  // 1. Laws and Permits Array
+  const lawsAndPermits = [
+    {
+      title: cms?.lawsPermitsCard01Title || "Research Requirements",
+      description: cms?.lawsPermitsCard01Description || "Data Requirements for EPA Registration",
+      href: cms?.lawsPermitsCard01Link || "/researchRequirements",
+      icon: cms?.lawsPermitsCard01Icon || "star",
+    },
+    {
+      title: cms?.lawsPermitsCard02Title || "Field Studies",
+      description: cms?.lawsPermitsCard02Description || "Experimental Use Permits",
+      href: cms?.lawsPermitsCard02Link || "/experimentalUse",
+      icon: cms?.lawsPermitsCard02Icon || "construction_worker",
+    },
+    {
+      title: cms?.lawsPermitsCard03Title || "External Resources",
+      description: cms?.lawsPermitsCard03Description || "Learn More!",
+      href: cms?.lawsPermitsCard03Link || "/externalResources",
+      icon: cms?.lawsPermitsCard03Icon || "link",
+    },
+    {
+      title: cms?.lawsPermitsCard04Title || "Getting an Approval",
+      description: cms?.lawsPermitsCard04Description || "Permits & Regulations",
+      href: cms?.lawsPermitsCard04Link || "/gettingApproval",
+      icon: cms?.lawsPermitsCard04Icon || "thumb_up_alt",
+    },
+    {
+      title: cms?.lawsPermitsCard05Title || "Regulatory Agencies",
+      description: cms?.lawsPermitsCard05Description || "Federal & State Regulations",
+      href: cms?.lawsPermitsCard05Link || "/regulationsDirectory",
+      icon: cms?.lawsPermitsCard05Icon || "topic",
+    },
+  ];
 
-const literature = [
-  {
-    title: "HABs 101",
-    description: "Species, Impacts, Research, Resources, Response",
-    href: "/habs101",
-    icon: "public",
-  },
-  {
-    title: "Literature Search",
-    description: "Publications on HAB control technologies",
-    href: "/literatureSearch",
-    icon: "local_library",
-  },
-  {
-    title: "Consultants Database",
-    description: "Get Consultants or Experts",
-    href: "/consultantsDatabase",
-    icon: "contact_page",
-  },
-  {
-    title: "Control Technologies",
-    description: "Common Concepts",
-    href: "/controlTechnologies",
-    icon: "history",
-  },
-];
+  // 2. Literature Array (Mapped from image_81d6a4.png structures)
+  const literature = [
+    {
+      title: cms?.literatureCardTitle01 || "HABs 101",
+      description: cms?.literatureCardDescription01 || "Species, Impacts, Research, Resources, Response",
+      href: cms?.literatureCardLink01 || "/habs101",
+      icon: cms?.literatureCardIcon01 || "public",
+    },
+    {
+      title: cms?.literatureCardTitle02 || "Literature Search",
+      description: cms?.literatureCardDescription02 || "Publications on HAB control technologies",
+      href: cms?.literatureCardLink02 || "/literatureSearch",
+      icon: cms?.literatureCardIcon02 || "local_library",
+    },
+    {
+      title: cms?.literatureCardTitle03 || "Consultants Database",
+      description: cms?.literatureCardDescription03 || "Get Consultants or Experts",
+      href: cms?.literatureCardLink03 || "/consultantsDatabase",
+      icon: cms?.literatureCardIcon03 || "contact_page",
+    },
+    {
+      title: cms?.literatureCardTitle04 || "Control Technologies",
+      description: cms?.literatureCardDescription04 || "Common Concepts",
+      href: cms?.literatureCardLink04 || "/controlTechnologies",
+      icon: cms?.literatureCardIcon04 || "history",
+    },
+  ];
 
-const products = [
-  {
-    title: "Registered Products",
-    description: "Product Catalogue",
-    href: "/registeredProducts",
-    icon: "verified",
-  },
-  {
-    title: "Patent Search",
-    description: "IP, Inventorship Agreements & Registration Information",
-    href: "/patentSearch",
-    icon: "search",
-  },
-];
+  // 3. Products Array (Mapped from image_81d6a4.png structures)
+  const products = [
+    {
+      title: cms?.productsCardTitle01 || "Registered Products",
+      description: cms?.productsCardDescription01 || "Product Catalogue",
+      href: cms?.productsCardLink01 || "/registeredProducts",
+      icon: cms?.productsCardIcon01 || "verified",
+    },
+    {
+      title: cms?.productsCardTitle02 || "Patent Search",
+      description: cms?.productsCardDescription02 || "IP, Inventorship Agreements & Registration Information",
+      href: cms?.productsCardLink02 || "/patentSearch",
+      icon: cms?.productsCardIcon02 || "search",
+    },
+  ];
+
+  return (
+    <section className="w-full px-4 py-8 tracking-wide sm:px-6 sm:py-10 lg:px-10 xl:px-20">
+      <p className="text-sm font-semibold text-green">RESOURCE NAVIGATION</p>
+
+      <h2 className="mt-1 text-2xl font-bold text-gray-900 sm:text-3xl">
+        Quick Access to Key Tools
+      </h2>
+
+      <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
+        Easily find permits, research, technologies, and approved products related to HAB control.
+      </p>
+
+      {/* Laws and Permit Section */}
+      <ToolSection
+        title="Laws and Permits"
+        items={lawsAndPermits}
+        className="mt-8"
+        gridClassName="md:grid-cols-2 xl:grid-cols-3"
+      />
+
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+        <ToolSection
+          title="Literature"
+          items={literature}
+          gridClassName="md:grid-cols-2"
+        />
+
+        <ToolSection title="Products" items={products} />
+      </div>
+    </section>
+  );
+}
 
 function ToolCard({ item }) {
   return (
@@ -130,41 +168,5 @@ function ToolSection({ title, items, className = "", gridClassName = "" }) {
         ))}
       </div>
     </fieldset>
-  );
-}
-
-export default function Navigation() {
-  return (
-    <section className="w-full px-4 py-8 tracking-wide sm:px-6 sm:py-10 lg:px-10 xl:px-20">
-      {/* Heading */}
-      <p className="text-sm font-semibold text-green">RESOURCE NAVIGATION</p>
-
-      <h2 className="mt-1 text-2xl font-bold text-gray-900 sm:text-3xl">
-        Quick Access to Key Tools
-      </h2>
-
-      <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
-        Easily find permits, research, technologies, and approved products
-        related to HAB control.
-      </p>
-
-      {/* Laws and Permit Section */}
-      <ToolSection
-        title="Laws and Permits"
-        items={lawsAndPermits}
-        className="mt-8"
-        gridClassName="md:grid-cols-2 xl:grid-cols-3"
-      />
-
-      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
-        <ToolSection
-          title="Literature"
-          items={literature}
-          gridClassName="md:grid-cols-2"
-        />
-
-        <ToolSection title="Products" items={products} />
-      </div>
-    </section>
   );
 }

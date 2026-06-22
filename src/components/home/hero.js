@@ -1,47 +1,49 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const slides = [
-  {
-    image: "/hero.jpg",
-    label: "WELCOME",
-    description: [
-      "A collection of HAB control regulations and permitting information to help users navigate algaecide use in marine and freshwater",
-    ],
-  },
-  {
-    image: "/hero2.jpg",
-    label: "WHAT WE DO",
-    tag: "US HAB CTRL",
-    title: "What We Do",
-    description: [
-      "The US HAB CTRL helps simplify the regulatory process around harmful algal bloom (HAB) control.",
-      "We make it easier for researchers, agencies, and industry stakeholders to understand permitting requirements, reduce delays and uncertainties early in development, and access information on safe, approved products - all in one place.",
-    ],
-  },
-  {
-    image: "/hero3.jpg",
-    label: "WHY IT MATTERS",
-    tag: "US HAB CTRL",
-    title: "Why It Matters",
-    description: [
-      "By improving transparency and clarity in the permitting process, the HAB control supports faster, safer, and more informed decision-making.",
-      "This reduces time, costs, and confusion for industries and researchers working on HAB solutions.",
-    ],
-  },
-  {
-    image: "/hero4.jpg",
-    label: "WHAT WE SUPPORT",
-    tag: "US HAB CTRL",
-    title: "What We Support",
-    description: [
-      "We aim to help users make informed decisions about HAB control by sharing guidance on when and how approved products may be used.",
-      "While the platform doesn't claim to cover everything, it provides a strong starting point rooted in current best practices and available regulatory insights.",
-    ],
-  },
-];
+export default function Hero({ cms }) {
+  // Reconstruct your array on the fly from your flat WordPress ACF custom fields
+  const slides = [
+    {
+      image: cms?.slide1Image?.node?.sourceUrl || "/hero.jpg",
+      label: cms?.slide1Label || "WELCOME",
+      description: [
+        cms?.slide1Line1 || "Harmful Algal Bloom Control",
+        cms?.slide1Line2 || "Technologies & Regulatory Logistics"
+      ],
+    },
+    {
+      image: cms?.slide2Image?.node?.sourceUrl || "/hero2.jpg",
+      label: cms?.slide2Tag || "WHAT WE DO",
+      tag: cms?.slide2Tag || "US HAB CTRL",
+      title: cms?.slide2Title || "What We Do",
+      description: [
+        cms?.slide2Description01 || "The US HAB CTRL helps simplify the regulatory process around harmful algal bloom (HAB) control.",
+        cms?.slide2Description02 || "We make it easier for researchers, agencies, and industry stakeholders to understand permitting requirements, reduce delays and uncertainties early in development, and access information on safe, approved products - all in one place."
+      ].filter(Boolean),
+    },
+    {
+      image: cms?.slide3Image?.node?.sourceUrl || "/hero3.jpg",
+      label: cms?.slide3Tag || "WHY IT MATTERS",
+      tag: cms?.slide3Tag || "US HAB CTRL",
+      title: cms?.slide3Title || "Why It Matters",
+      description: [
+        cms?.slide3Description01 || "By improving transparency and clarity in the permitting process, the HAB control supports faster, safer, and more informed decision-making.",
+        cms?.slide3Description02 || "This reduces time, costs, and confusion for industries and researchers working on HAB solutions."
+      ].filter(Boolean),
+    },
+    {
+      image: cms?.slide4Image?.node?.sourceUrl || "/hero4.jpg",
+      label: cms?.slide4Tag || "WHAT WE SUPPORT",
+      tag: cms?.slide4Tag || "US HAB CTRL",
+      title: cms?.slide4Title || "What We Support",
+      description: [
+        cms?.slide4Description01 || "We aim to help users make informed decisions about HAB control by sharing guidance on when and how approved products may be used.",
+        cms?.slide4Description02 || "While the platform doesn't claim to cover everything, it provides a strong starting point rooted in current best practices and available regulatory insights."
+      ].filter(Boolean),
+    },
+  ];
 
-export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export default function Hero() {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const slide = slides[activeSlide];
 
@@ -59,7 +61,7 @@ export default function Hero() {
         {slides.map((s, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out ${index === activeSlide ? "slide-active" : ""}`}
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out"
             style={{
               backgroundImage: `url('${s.image}')`,
               transform: `translateX(${(index - activeSlide) * 100}%)`,
@@ -73,22 +75,15 @@ export default function Hero() {
         {/* Welcome slide */}
         {activeSlide === 0 && (
           <div className="relative z-10 py-10 px-1 text-center mb-6">
-            <p className="text-[#78a529] text-l font-bold mt-5">WELCOME TO</p>
+            <p className="text-[#78a529] text-l font-bold mt-5">{slide.label}</p>
             <div className="font-bold text-xl leading-tight relative w-fit mx-auto after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-white after:to-transparent">
-              <h1 className="!mb-0">Harmful Algal Bloom Control</h1>
-              <h1 className="!mt-2">Technologies & Regulatory Logistics</h1>
-            </div>
-            <div className="text-l text-gray-200 max-w-xl mx-auto whitespace-nowrap">
-              <p>
-                A collection of HAB control regulations and permitting
-                information to help
-              </p>
-              <p>users navigate algaecide use in marine and freshwater</p>
+              <h1 className="!mb-0">{slide.description[0]}</h1>
+              <h3 className="!mt-2">{slide.description[1]}</h3>
             </div>
           </div>
         )}
 
-        {/* Other slides */}
+        {/* Other dynamic content slides */}
         {activeSlide !== 0 && (
           <div className="relative z-10 py-8 px-8 mb-6">
             <p className="text-[#78a529] font-bold text-sm">{slide.tag}</p>
