@@ -529,11 +529,10 @@ export default function PesticideRegistration() {
                 <p
                   key={section.id}
                   onClick={() => scrollTo(section.id)}
-                  className={`cursor-pointer py-2 pl-4 text-sm transition-colors duration-200 hover:text-primary ${
-                    activeSection === section.id
+                  className={`cursor-pointer py-2 pl-4 text-sm transition-colors duration-200 hover:text-primary ${activeSection === section.id
                       ? "-ml-[2px] border-l-4 border-black font-semibold text-black"
                       : "text-primary"
-                  }`}
+                    }`}
                 >
                   {section.label}
                 </p>
@@ -927,9 +926,10 @@ export default function PesticideRegistration() {
                         </li>
                         <li>
                           Statement concerning{" "}
-                          <ExternalLink href={externalLinks.tolerances}>
-                            Tolerances
-                          </ExternalLink>
+                          <Link
+                            href="/tolerances"
+                            className="text-primary text-underline"
+                          >Tolerances</Link>
                         </li>
                       </ul>
                     </li>
@@ -990,7 +990,14 @@ export default function PesticideRegistration() {
             <div className="mb-8 text-lg">
               <p>
                 Data required for pesticide registration submission must be
-                collected using standardized methods set forth by the EPA or the
+                collected using
+                {" "}
+                <Link
+                  href="/goodLaboratoryPractices"
+                  className="text-primary text-underline"
+                >
+                  Good Laboratory Practices
+                </Link>, including standardized methods set forth by the EPA or the
                 Organization for Economic Co-operation and Development (OECD).
                 Each required data category has an accompanying series of
                 necessary tests. The various series identify and detail the data
