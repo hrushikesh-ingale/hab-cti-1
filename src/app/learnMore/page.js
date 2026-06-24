@@ -1,34 +1,5 @@
 import Link from "next/link";
 
-const items = [
-  {
-    label: "Chemical",
-    href: "/",
-    children: [
-      {
-        label: "Conventional pesticide",
-        href: "/conventionalPesticide",
-      },
-    ],
-  },
-  {
-    label: "Biological",
-    href: "/",
-  },
-  {
-    label: "Physical",
-    href: "/",
-  },
-  {
-    label: "Minimum risk pesticides",
-    href: "/minimumRiskPesticides",
-  },
-  {
-    label: "Experimental Use Permit",
-    href: "/experimentalUse",
-  },
-];
-
 export default function LearnMore() {
   return (
     <div className="px-20 py-10 tracking-wide">
@@ -65,34 +36,6 @@ export default function LearnMore() {
             approval pathways
           </p>
         </div>
-      </div>
-
-      {/* Content */}
-      <div className="mt-16 max-w-4xl">
-        <ul className="ml-8 list-disc text-2xl font-semibold leading-10 text-primary">
-          {items.map((item) => (
-            <li key={item.label} className="mt-4">
-              <Link href={item.href} className="text-primary text-underline">
-                {item.label}
-              </Link>
-
-              {item.children && (
-                <ul className="mt-3 ml-8 list-[circle] text-xl font-medium leading-8 text-black">
-                  {item.children.map((child) => (
-                    <li key={child.label}>
-                      <Link
-                        href={child.href}
-                        className="text-primary text-underline"
-                      >
-                        {child.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
