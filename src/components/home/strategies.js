@@ -21,6 +21,7 @@ const tabs = {
         label: "Biochemical Pesticides",
         image: "/biochemical.png",
         title: "Biochemical Pesticides",
+        learnMoreLink: "/",
         body: [
           "Biochemical Pesticides are substances that- (1) are naturally occuring chemicals or are synthetically dervived equivalents; (2) have a history of exposure to humans and the environment demonstrating minimal toxicity, or in the case of a synthetically-derived biochemical pesticides, are equivalent to a naturally occuring chemical that have such a history; and (3) have a nontoxic mode of action to the target pest(s). Biochemical pesticides include substances, such as insect sex pheromones, which interfere with mating, as well as various scented plant extracts that attract insect pests to traps. Because it is sometimes difficult to determine whether a substance meets the criteria for classification as a biochemical pesticide, EPA has established the Biochemical Classification Committee to make such decisions.",
         ],
@@ -29,6 +30,7 @@ const tabs = {
         label: "Antimicrobial Pesticides",
         image: "/antimicrobial.png",
         title: "Antimicrobial Pesticides",
+        learnMoreLink: "/",
         body: [
           "An antimicrobial pesticide is intended to disinfect, sanitize, reduce, or mitigate growth or development of microbiological organisms; or protect inanimate objects, industrial processes or systems, surfaces, water, or other chemical substances from contamination, fouling, or deterioration caused by bacteria, viruses, fungi, protozoa, algae, or slime; and in the intended use if exempt from, or otherwise not subject to, a tolerance or a food additive regulation.",
           "Wood preservatives and anti-foulants are classified as antimicrobial pesticides if the products have antimicrobial claims. Other wood preservative, anti-foulant, agricultural fungicide, and aquatic herbicide products are either classified as conventionals or biopesticides.",
@@ -38,6 +40,7 @@ const tabs = {
         label: "Minimum Risk Pesticides",
         image: "/minimum.png",
         title: "Minimum Risk Pesticides",
+        learnMoreLink: "/minimumRiskPesticides",
         body: [
           "These are pesticides that meet a series of criteria determining them to pose little to no risk to human health or the environment. These pesticides are exempt from registration and label review under FIFRA.",
           "If a product does not meet all of the exemption criteria, the product is not exempt from FIFRA regulation under 40 CFR 152.25(f), and sale or distribution of the product without registration may be a violation of FIFRA unless it is otherwise exempt from registration requirements.",
@@ -54,6 +57,7 @@ const tabs = {
         label: "Biotechnology",
         image: "/biotechnology.png",
         title: "Biotechnology",
+        learnMoreLink: "/",
         body: [
           "The science of modifying the genetic composition of plants, animals, and microorganisms.",
           "This includes Plant-Incorporated Protectants (PIPs) and genetically modified microbial pesticides.",
@@ -63,6 +67,7 @@ const tabs = {
         label: "Biomanipulation",
         image: "/biomanipulation.png",
         title: "Biomanipulation",
+        learnMoreLink: "/",
         body: [
           "The strategy to reduce algal blooms and improve water clarity by manipulating the populations of organisms within the food web, particularly fish, shellfish, zooplankton, and aquatic plants.",
         ],
@@ -71,6 +76,7 @@ const tabs = {
         label: "Microbial Pesticides",
         image: "/microbial.png",
         title: "Microbial Pesticides",
+        learnMoreLink: "/",
         body: [
           "Microbial pesticides consist of a microorganism (e.g., a bacterium, fungus, virus or protozoan) as the active ingredient.",
           "Microbial pesticides can control many different kinds of pests, although each seperate active ingredient is relatively specific for its target pests.",
@@ -86,7 +92,7 @@ const tabs = {
           "There are three major categories of biopesticide.",
           "1. Biochemical Pesticides: Naturally occurring, non-toxic substances that control pests without directly killing them (unlike synthetic conventional pesticides). Examples include insect sex pheromones that disrupt mating and scented plant extracts used as trap attractants. The EPA uses a special committee to officially classify these.",
           "2. Microbial Pesticides: Products containing microorganisms (bacteria, fungi, viruses, or protozoa) as the active ingredient. They are highly pest-specific; for instance, different strains of Bacillus thuringiensis (Bt) produce distinct proteins that target and starve specific insect larvae (like mosquitoes or moths) by binding to their gut receptors.",
-          "3. Plant-Incorporated-Protectants (PIPs): Pesticidal substances produced naturally by plants that have been genetically modified. For example, scientists can insert the gene for the Bt protein directly into a plant's DNA, causing the plant itself to manufacture the pest-destroying substance. The EPA regulates the genetic material and the protein, but not the plant itself."
+          "3. Plant-Incorporated-Protectants (PIPs): Pesticidal substances produced naturally by plants that have been genetically modified. For example, scientists can insert the gene for the Bt protein directly into a plant's DNA, causing the plant itself to manufacture the pest-destroying substance. The EPA regulates the genetic material and the protein, but not the plant itself.",
         ],
       },
     },
@@ -100,6 +106,7 @@ const tabs = {
         label: "Physical Devices",
         image: "/devices.png",
         title: "Devices",
+        learnMoreLink: "/",
         body: [
           "an instrument or contrivance, generally working by physical means (e.g., electricity, light, or other mechanical or physical means) and not containing a substance or mixture of substances, that is intended to trap, destroy, repel, or mitigate a pest.",
           "This definition excludes equipment used for applying pesticides when sold seperately from the pesticides themselves. 40 C.F.R. & 152.500(a).",
@@ -115,6 +122,7 @@ const tabs = {
         label: "Minimum Risk Pesticides",
         image: "/minimum.png",
         title: "Minimum Risk Pesticides",
+        learnMoreLink: "/minimumRiskPesticides",
         body: [
           "These are pesticides that meet a series of criteria determining them to pose little to no risk to human health or the environment. These pesticides are exempt from registration and label review under FIFRA.",
           "If a product does not meet all of the exemption criteria, the product is not exempt from FIFRA regulation under 40 CFR 152.25(f), and sale or distribution of the product without registration may be a violation of FIFRA unless it is otherwise exempt from registration requirements.",
@@ -196,7 +204,10 @@ export default function Strategies() {
                   {currentContent.body.map((paragraph, i) => {
                     const colonIndex = paragraph.indexOf(":");
                     return (
-                      <p key={i} className={`font-light ${i > 0 ? "mt-5" : ""}`}>
+                      <p
+                        key={i}
+                        className={`font-light ${i > 0 ? "mt-5" : ""}`}
+                      >
                         {colonIndex !== -1 ? (
                           <>
                             <span className="font-bold">
@@ -229,6 +240,6 @@ export default function Strategies() {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
