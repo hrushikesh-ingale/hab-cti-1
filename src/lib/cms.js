@@ -325,6 +325,84 @@ query GetDisclaimerData {
 }
 `;
 
+export const GET_RESEARCH_PAGE_DATA = `
+query GetResearchPageData {
+  page(id: "335", idType: DATABASE_ID) { 
+    researchRequirements{
+      pageTitle
+      pageSubtitle
+      overviewTitle
+      overviewDescription
+      section01Title
+      section02Title
+      section02Description
+      additionalTitle
+      additionalDescription
+      conventionalJson
+      biochemicalJson
+      microbialJson
+    }
+  }
+}
+`;
+
+export const GET_EXPERIMENTAL_USE_DATA = `
+query GetExperimentalUseData {
+  page(id: "374", idType: DATABASE_ID) { 
+    fieldStudiesExperimentalUse {
+      pageTitle
+      pageSubtitle
+      overviewTitle
+      overviewDescription
+      eupApplicationTitle
+      eupApplicationDescription
+      confidentialStatementTitle
+      confidentialStatementDescription
+      requiredFormsTitle
+      requiredFormsDescription
+      additionalResourcesTitle
+      additionalResourcesDescription
+      questionsTitle
+      questionsDescription
+    }
+  }
+}
+`;
+
+export async function getExperimentalUseFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_EXPERIMENTAL_USE_DATA }),
+      cache: 'no-store',
+    });
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.fieldStudiesExperimentalUse || null;
+  } catch (error) {
+    console.error("Experimental Use Page Fetch Error:", error);
+    return null;
+  }
+}
+
+export async function getResearchRequirementsFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_RESEARCH_PAGE_DATA }),
+      cache: 'no-store', // Ensures changes update instantly on refresh
+    });
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.researchRequirements || null;
+  } catch (error) {
+    console.error("Research Requirements Fetch Error:", error);
+    return null;
+  }
+}
+
 export async function getDisclaimerFields() {
   try {
     const res = await fetch('https://cms.habctrl.info/graphql', {
