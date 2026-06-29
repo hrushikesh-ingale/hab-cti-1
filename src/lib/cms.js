@@ -1,3 +1,142 @@
+export const GET_PERMITTING_LAWS = `
+query GetPermittingLaws {
+  page(id: "194", idType: DATABASE_ID) {
+    homepageAgenciesFields {
+    sectionTitle
+    sectionDescription
+      # Card 01
+      card01Title
+      card01Description
+      card01Link
+      card01IsPrimary
+      card01Image { node { sourceUrl } }
+      # Card 02
+      card02Title
+      card02Description
+      card02Link
+      card02IsPrimary
+      card02Image { node { sourceUrl } }
+      # Card 03
+      card03Title
+      card03Description
+      card03Link
+      card03IsPrimary
+      card03Image { node { sourceUrl } }
+      # Card 04
+      card04Title
+      card04Description
+      card04Link
+      card04IsPrimary
+      card04Image { node { sourceUrl } }
+      # Card 05
+      card05Title
+      card05Description
+      card05Link
+      card05IsPrimary
+      card05Image { node { sourceUrl } }
+      # Card 06
+      card06Title
+      card06Description
+      card06Link
+      card06IsPrimary
+      card06Image { node { sourceUrl } }
+      # Card 07
+      card07Title
+      card07Description
+      card07Link
+      card07IsPrimary
+      card07Image { node { sourceUrl } }
+      # Card 08
+      card08Title
+      card08Description
+      card08Link
+      card08IsPrimary
+      card08Image { node { sourceUrl } }
+    }
+  }
+}
+`;
+
+export const GET_COMPLIANCE_ACTS = `
+query GetComplianceActs {
+  page(id: "227", idType: DATABASE_ID) {
+    complianceActsFields {
+    sectionTitle
+    sectionDescription
+      # Act 01
+      act01Title
+      act01Description
+      act01Link
+      act01Image { node { sourceUrl } }
+      # Act 02
+      act02Title
+      act02Description
+      act02Link
+      act02Image { node { sourceUrl } }
+      # Act 03
+      act03Title
+      act03Description
+      act03Link
+      act03Image { node { sourceUrl } }
+      # Act 04
+      act04Title
+      act04Description
+      act04Link
+      act04Image { node { sourceUrl } }
+      # Act 05
+      act05Title
+      act05Description
+      act05Link
+      act05Image { node { sourceUrl } }
+      # Act 06
+      act06Title
+      act06Description
+      act06Link
+      act06Image { node { sourceUrl } }
+      # Act 07
+      act07Title
+      act07Description
+      act07Link
+      act07Image { node { sourceUrl } }
+    }
+  }
+}
+`;
+
+export async function getPermittingLawsFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_PERMITTING_LAWS }),
+      cache: 'no-store',
+    });
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.homepageAgenciesFields || null;
+  } catch (error) {
+    console.error("Permitting Laws Fetch Error:", error);
+    return null;
+  }
+}
+
+export async function getComplianceActsFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_COMPLIANCE_ACTS }),
+      cache: 'no-store',
+    });
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.complianceActsFields || null;
+  } catch (error) {
+    console.error("Compliance Acts Fetch Error:", error);
+    return null;
+  }
+}
+
 export const GET_HOMEPAGE_DATA = `
 query GetHomepageData {
   page(id: "46", idType: DATABASE_ID) {
@@ -51,7 +190,7 @@ query GetHomepageData {
 
 export const GET_NAVIGATION_DATA = `
 query GetNavigationData {
-  page(id: "quick-access-to-key-tools", idType: URI) {
+  page(id: "103", idType: DATABASE_ID) {
     quickAccessToKeyTools {
       # === Laws & Permits Section ===
       lawsPermitsCard01Title
@@ -106,6 +245,121 @@ query GetNavigationData {
   }
 }
 `;
+
+
+export const GET_STRATEGIES_DATA = `
+query GetStrategiesData {
+  page(id: "248", idType: DATABASE_ID) {
+    homepageControlStrategies {
+      sectionTitle
+      sectionDescription
+      
+      # Main Tab Names
+      tab01
+      tab02
+      tab03
+      tab04
+
+      # --- Tab 01 Sub Tabs (1 - 4) ---
+      tab01SubTab01Label
+      tab01SubTab01Description
+      tab01SubTab01Link
+      tab01SubTab01Image { node { sourceUrl } }
+      tab01SubTab02Label
+      tab01SubTab02Description
+      tab01SubTab02Link
+      tab01SubTab02Image { node { sourceUrl } }
+      tab01SubTab03Label
+      tab01SubTab03Description
+      tab01SubTab03Link
+      tab01SubTab03Image { node { sourceUrl } }
+      tab01SubTab04Label
+      tab01SubTab04Description
+      tab01SubTab04Link
+      tab01SubTab04Image { node { sourceUrl } }
+
+      # --- Tab 02 Sub Tabs (1 - 4) ---
+      tab02SubTab01Label
+      tab02SubTab01Description
+      tab02SubTab01Link
+      tab02SubTab01Image { node { sourceUrl } }
+      tab02SubTab02Label
+      tab02SubTab02Description
+      tab02SubTab02Link
+      tab02SubTab02Image { node { sourceUrl } }
+      tab02SubTab03Label
+      tab02SubTab03Description
+      tab02SubTab03Link
+      tab02SubTab03Image { node { sourceUrl } }
+      tab02SubTab04Label
+      tab02SubTab04Description
+      tab02SubTab04Link
+      tab02SubTab04Image { node { sourceUrl } }
+
+      # --- Tab 03 Sub Tab (1) ---
+      tab03SubTab01Label
+      tab03SubTab01Description
+      tab03SubTab01Link
+      tab03SubTab01Image { node { sourceUrl } }
+
+      # --- Tab 04 Sub Tab (1) ---
+      tab04SubTab01Label
+      tab04SubTab01Description
+      tab04SubTab01Link
+      tab04SubTab01Image { node { sourceUrl } }
+    }
+  }
+}
+`;
+
+export const GET_DISCLAIMER_DATA = `
+query GetDisclaimerData {
+  page(id: "324", idType: DATABASE_ID) {
+    homepageDisclaimer {
+      sectionTitle
+      attentionTitleHeader
+      contentUpdatedText
+      attentionDescriptionText
+    }
+  }
+}
+`;
+
+export async function getDisclaimerFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_DISCLAIMER_DATA }),
+      cache: 'no-store',
+    });
+
+    if (!res.ok) throw new Error(`WordPress API returned status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.homepageDisclaimer || null;
+  } catch (error) {
+    console.error("Disclaimer Fetch Error:", error);
+    return null; 
+  }
+}
+
+export async function getStrategiesFields() {
+  try {
+    const res = await fetch('https://cms.habctrl.info/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: GET_STRATEGIES_DATA }),
+      cache: 'no-store',
+    });
+
+    if (!res.ok) throw new Error(`WordPress API returned status ${res.status}`);
+    const { data } = await res.json();
+    return data?.page?.homepageControlStrategies || null;
+  } catch (error) {
+    console.error("Strategies Fetch Error:", error);
+    return null; 
+  }
+}
 
 export async function getNavigationFields() {
   try {

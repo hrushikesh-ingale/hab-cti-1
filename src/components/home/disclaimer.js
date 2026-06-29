@@ -1,13 +1,18 @@
-export default function Disclaimer() {
+export default function Disclaimer({ cms }) {
+  // Fallback text matching your original static content layout structure
+  const defaultText = `The information available through US HAB CTI's web site is provided as a public service and if for educational purposes only. All efforts have been made to ensure the material on this site is accurate and up to date However, US HAB-CTI and University of Maryland Center for Environemntal Science cannot be held responsible for any circumstances resulting from its use, unavailability, or possible inaccuracy.
+
+US HAB-CTI makes no representations and specifically disclaims all liabilities and warranties, express, implied, or statutory, regarding the accuracy, timeliness, or completeness for any particular purpose of any material contained on this site.`;
+
   return (
     <div className="px-20 py-10 tracking-wide">
-      {/* Warning */}
+      {/* Warning Title */}
       <p className="text-green font-bold text-sm">DISCLAIMER</p>
-      <p className="font-bold text-3xl text-(--black)] mt-1">
-        Warning & Report
+      <p className="font-bold text-3xl text-black mt-1">
+        {cms?.sectionTitle || "Warning & Report"}
       </p>
 
-      {/* Attention! */}
+      {/* Attention & Report Columns Block */}
       <div className="flex flex-row mt-5">
         <div className="bg-[#f4e3db] text-black py-5 px-10 border-l-6 border-l-[#d54309] rounded w-full">
           <div className="font-bold">
@@ -20,30 +25,20 @@ export default function Disclaimer() {
               >
                 <use href="/assets/img/sprite.svg#info"></use>
               </svg>
-              Attention!
+              {cms?.attentionTitleHeader || "Attention!"}
             </div>
             <h3 className="mt-3">
-              Content last updated as of: March 04, 2025, Monday
+              {cms?.contentUpdatedText || "Content last updated as of: March 04, 2025, Monday"}
             </h3>
           </div>
-          <p className="mt-5 text-light">
-            The information available through US HAB CTI's web site is provided
-            as a public service and if for educational purposes only. All
-            efforts have been made to ensure the material on this site is
-            accurate and up to date However, US HAB-CTI and University of
-            Maryland Center for Environemntal Science cannot be held responsible
-            for any circumstances resulting from its use, unavailability, or
-            possible inaccuracy.
-          </p>
-          <p className="mt-5 text-light">
-            US HAB-CTI makes no representations and specifically disclaims all
-            liabilities and warranties, express, implied, or statutory,
-            regarding the accuracy, timeliness, or completeness for any
-            particular purpose of any material contained on this site.
-          </p>
+
+          {/* ADDED: whitespace-pre-line maintains all spacing and line breaks naturally */}
+          <div className="whitespace-pre-line mt-5 text-light leading-relaxed">
+            {cms?.attentionDescriptionText || defaultText}
+          </div>
         </div>
 
-        {/* Report Errors */}
+        {/* Report Errors Card (Static CTA Column) */}
         <div className="bg-primary-lighter px-8 py-8 ml-3 border-primary border-l-2 border-t-2 border-r-2 border-b-2 rounded-xl shrink-0 w-96">
           <h1 className="font-bold">
             <svg
