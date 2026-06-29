@@ -4,22 +4,42 @@ import Agencies from "@/components/home/agencies.js";
 import Strategies from "@/components/home/strategies.js";
 import Disclaimer from "@/components/home/disclaimer.js";
 
-import { getHomepageFields, getNavigationFields } from "@/lib/cms";
+import { 
+  getHomepageFields, 
+  getNavigationFields, 
+  getPermittingLawsFields, 
+  getComplianceActsFields,
+  getStrategiesFields,
+  getDisclaimerFields
+} from "@/lib/cms";
 
 export default async function Home() {
-  // Fetch both streams in parallel
-  const [heroData, navigationData] = await Promise.all([
+  // Fetch all five streams concurrently in parallel
+  const [
+    heroData, 
+    navigationData, 
+    permittingData, 
+    complianceData,
+    strategiesData,
+    disclaimerData
+
+  ] = await Promise.all([
     getHomepageFields(),
-    getNavigationFields()
+    getNavigationFields(),
+    getPermittingLawsFields(),
+    getComplianceActsFields(),
+    getStrategiesFields(),
+    getDisclaimerFields()
   ]);
 
   return (
     <main>
       <Hero cms={heroData} />
       <Navigation cms={navigationData} />
-      <Agencies />
-      <Strategies />
-      <Disclaimer />
+      <Agencies permittingCms={permittingData} complianceCms={complianceData} />
+      {/* Injected consolidated control strategies data fields */}
+      <Strategies cms={strategiesData} />
+      <Disclaimer cms={disclaimerData} />
     </main>
   );
 }
